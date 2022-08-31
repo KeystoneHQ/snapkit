@@ -1,0 +1,42 @@
+{
+  "name": "snapkit",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "npm run build:ts && npm run build:css",
+    "build:css": "sass ./src/styles/index.scss ./dist/index.css",
+    "build:ts": "tsc --build --clean",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "semantic-ui-react": "^2.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-vite": "^0.2.2",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "@vitejs/plugin-react": "^2.0.1",
+    "babel-loader": "^8.2.5",
+    "eslint": "^8.23.0",
+    "eslint-plugin-react": "^7.31.1",
+    "sass": "^1.54.7",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.7"
+  },
+  "packageManager": "yarn@3.2.3"
+}
