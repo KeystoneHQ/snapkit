@@ -5,7 +5,7 @@
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "types": "dist/styles/index.d.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "start-storybook -p 6006",
     "clean": "rimraf ./dist",
