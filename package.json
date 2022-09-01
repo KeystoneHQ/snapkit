@@ -3,14 +3,17 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/styles/index.d.js",
   "scripts": {
-    "dev": "vite",
-    "preview": "vite preview",
-    "build": "npm run build:ts && npm run build:css",
+    "dev": "start-storybook -p 6006",
+    "clean": "rimraf ./dist",
+    "build": "npm run build:component && npm run build:ts",
     "build:css": "sass ./src/styles/index.scss ./dist/index.css",
-    "build:ts": "tsc --build --clean",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build:ts": "tsc --build tsconfig.build.json",
+    "build:component": "vite build",
+    "build:storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -32,11 +35,12 @@
     "@typescript-eslint/parser": "^5.36.1",
     "@vitejs/plugin-react": "^2.0.1",
     "babel-loader": "^8.2.5",
+    "cpy-cli": "^4.2.0",
     "eslint": "^8.23.0",
     "eslint-plugin-react": "^7.31.1",
+    "rimraf": "^3.0.2",
     "sass": "^1.54.7",
     "typescript": "^4.6.4",
     "vite": "^3.0.7"
-  },
-  "packageManager": "yarn@3.2.3"
+  }
 }

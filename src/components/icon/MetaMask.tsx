@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconProps } from './types'
 
-export default function MetaMask ({ className, width = '72', height = '72' }: IconProps) {
+export function MetaMask ({ className, width = '72', height = '72' }: IconProps) {
   return (
     <svg width={width} height={height} viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <path d="M66.3001 3.99988L40.0201 23.4399L44.9201 11.9799L66.3001 3.99988Z" fill="#E17726" stroke="#E17726" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="round" />

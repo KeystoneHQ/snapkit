@@ -1,6 +1,6 @@
 import React from 'react'
-import Icon from '../icon'
-import styles from './Install.module.scss'
+import { Icon } from '../icon'
+// import styles from './Install.module.scss'
 
 export function Install () {
   return (

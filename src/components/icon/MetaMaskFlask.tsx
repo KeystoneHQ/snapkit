@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconProps } from './types'
 
-export default function MetaMaskFlask({ className, width = '72', height = '72' }: IconProps) {
+export function MetaMaskFlask({ className, width = '72', height = '72' }: IconProps) {
   return (
     <svg width={width} height={height} viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <path d="M40.0479 38.8178L41.1559 23.5501L45.6677 12.6748H26.3809L30.8925 23.5501L32.0006 38.8178L32.3437 43.6337L32.3701 55.488H39.6784L39.7047 43.6337L40.0479 38.8178Z" fill="url(#paint0_linear_679_9328)" />

@@ -1,1 +1,2 @@
-export default {}
+import './styles/index.scss'
+export * from './components'
