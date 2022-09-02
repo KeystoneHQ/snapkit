@@ -10,10 +10,17 @@ export default {
   }
 } as ComponentMeta<typeof Connect>
 
+export const Auto = () => {
+  const [open, setOpen] = useState(true)
+  return (
+    <Connect name='Aptos' open={open} onClose={() => setOpen(false)}></Connect>
+  )
+}
+
 export const Install = () => {
   const [open, setOpen] = useState(true)
   return (
-    <Connect open={open} onClose={() => setOpen(false)}>
+    <Connect name='Aptos' open={open} onClose={() => setOpen(false)}>
       <Connect.Install></Connect.Install>
     </Connect>
   )

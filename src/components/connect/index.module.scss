@@ -2,4 +2,12 @@
   :global(.content) {
     background: var(--color-pgd) !important;
   }
+
+  :global(.box) {
+    padding: 40px;
+  }
+
+  &.browser {
+    width: 552px !important;
+  }
 }
