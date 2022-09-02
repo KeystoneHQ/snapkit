@@ -6,12 +6,12 @@ import styles from './Install.module.scss'
 export function Install () {
   return (
     <>
-      <div className={`t-center ${styles.content}`}>
+      <div className={`sk-t-center ${styles.content}`}>
         <Icon.MetaMask></Icon.MetaMask>
-        <h2 className='t-h2 c-n80'>Install MetaMask Flask</h2>
-        <p className='t-caption c-n60'>You will need to install the MetaMask extension in order to use Aptos Snap.</p>
+        <h2 className='sk-t-h2 sk-c-n80'>Install MetaMask Flask</h2>
+        <p className='sk-t-caption sk-c-n60'>You will need to install the MetaMask extension in order to use Aptos Snap.</p>
         <p>
-          <a href='/' className='t-h4 c-pri60 c-hover-pri60 inline-flex items-center'>
+          <a href='/' className='sk-t-h4 sk-c-pri60 sk-c-hover-pri60 sk-inline-flex sk-items-center'>
             <span>Learn More</span>
             <Icon.ArrowRight></Icon.ArrowRight>
           </a>

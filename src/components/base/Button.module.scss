@@ -9,42 +9,42 @@
   padding: 0;
   transition: all 0.25s ease-in-out;
   width: 100%;
-  font-size: var(--font-size-h3);
+  font-size: var(--sk-font-size-h3);
 
   &.default {
-    background: var(--color-n20);
-    color: var(--color-n80);
+    background: var(--sk-color-n20);
+    color: var(--sk-color-n80);
 
     &:hover {
-      background: var(--color-n30);
+      background: var(--sk-color-n30);
     }
 
     &:disabled {
-      background: var(--color-n20);
-      color: var(--color-n50);
+      background: var(--sk-color-n20);
+      color: var(--sk-color-n50);
     }
   }
 
   &.primary {
-    background: var(--color-n80);
-    color: var(--color-n00);
+    background: var(--sk-color-n80);
+    color: var(--sk-color-n00);
 
     &:hover {
-      background: var(--color-pri50);
+      background: var(--sk-color-pri50);
     }
 
     &:disabled {
-      background: var(--color-n30);
-      color: var(--color-n50);
+      background: var(--sk-color-n30);
+      color: var(--sk-color-n50);
     }
   }
 
   &.loading {
-    background: var(--color-n30);
+    background: var(--sk-color-n30);
     cursor: default;
 
     &:hover {
-      background: var(--color-n30);
+      background: var(--sk-color-n30);
     }
   }
 
@@ -64,6 +64,6 @@
     width: 61px;
     height: 32px;
     border-radius: 10px;
-    font-size: var(--font-size-h4);
+    font-size: var(--sk-font-size-h4);
   }
 }

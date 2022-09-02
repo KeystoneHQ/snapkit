@@ -1,4 +1,4 @@
-.flex {
+.sk-flex {
   display: flex;
 
   &-row {
@@ -9,11 +9,11 @@
   }
 }
 
-.inline-flex {
+.sk-inline-flex {
   display: inline-flex;
 }
 
-.justify {
+.sk-justify {
   &-start {
     justify-content: flex-start;
   }
@@ -31,7 +31,7 @@
   }
 }
 
-.items {
+.sk-items {
   &-start {
     align-items: flex-start;
   }
