@@ -4,7 +4,7 @@ import styles from './Modal.module.scss'
 
 export function Modal ({ children, className, size = 'small', closeIcon, ...args }: ModalProps) {
   const _closeIcon = (
-    <div className={`icon ${styles.close} flex justify-center items-center bg-hover-ntd04 transition`}>
+    <div className={`sk-icon ${styles.close} sk-flex sk-justify-center sk-items-center sk-bg-hover-ntd04 sk-a-transition`}>
       <Icon.Close></Icon.Close>
     </div>
   )
@@ -17,10 +17,10 @@ export function Modal ({ children, className, size = 'small', closeIcon, ...args
       {...args}
     >
       <BaseModal.Content
-        className={styles.content}
+        className={`${styles.content} sk-content`}
       >
         <div
-          className={`box ${styles.box}`}
+          className={`sk-box ${styles.box}`}
         >
           {children}
         </div>

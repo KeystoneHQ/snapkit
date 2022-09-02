@@ -1,14 +1,14 @@
 .line-wobble {
-  --uib-size: 56px;
-  --uib-speed: 1.75s;
-  --uib-line-weight: 4px;
+  --sk-uib-size: 56px;
+  --sk-uib-speed: 1.75s;
+  --sk-uib-line-weight: 4px;
 
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--uib-line-weight);
-  width: var(--uib-size);
+  height: var(--sk-uib-line-weight);
+  width: var(--sk-uib-size);
   overflow: hidden;
   transform: translate3d(0, 0, 0);
 }
@@ -20,16 +20,16 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: var(--color-ntd10);
+  background-color: var(--sk-color-ntd10);
 }
 
 .line-wobble::after {
   content: '';
   height: 100%;
   width: 100%;
-  animation: wobble var(--uib-speed) ease-in-out infinite;
+  animation: wobble var(--sk-uib-speed) ease-in-out infinite;
   transform: translateX(-95%);
-  background-color: var(--color-n60);
+  background-color: var(--sk-color-n60);
 }
 
 @keyframes wobble {

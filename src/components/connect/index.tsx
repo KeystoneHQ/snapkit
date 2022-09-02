@@ -18,7 +18,7 @@ function isBrowserSupport () {
 }
 
 export function Connect ({ name, open, onClose, children }: ConnectProps) {
-  const modalDefaultClass = `t-center ${styles.modal}`
+  const modalDefaultClass = `sk-t-center ${styles.modal}`
   const [step, setStep] = useState(children)
   const [size, setSize] = useState('mini' as StrictModalProps['size'])
   const [modalClass, setModalClass] = useState(modalDefaultClass)
