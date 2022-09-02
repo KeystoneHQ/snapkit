@@ -1,4 +1,3 @@
-import React from 'react'
 import { Modal as BaseModal, ModalProps,  } from 'semantic-ui-react'
 import { Icon } from '../icon'
 import styles from './Modal.module.scss'
