@@ -7,7 +7,7 @@ import { Connecting } from './Connecting'
 import { StrictModalProps } from 'semantic-ui-react'
 
 interface ConnectProps {
-  name: string
+  name?: string
   open: boolean
   onClose(): void
   children?: JSX.Element | JSX.Element[]
@@ -31,7 +31,7 @@ export function Connect ({ name, open, onClose, children }: ConnectProps) {
         setStep(<Browser></Browser>)
       } else {
         setModalClass(modalDefaultClass)
-        setStep(<Connecting name={name}></Connecting>)
+        setStep(<Connecting name={name||''}></Connecting>)
       }
     }
   }, [children])
@@ -40,3 +40,4 @@ export function Connect ({ name, open, onClose, children }: ConnectProps) {
 }
 
 Connect.Install = Install
+Connect.Connecting = Connecting

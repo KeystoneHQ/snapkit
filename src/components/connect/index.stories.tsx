@@ -20,8 +20,17 @@ export const Auto = () => {
 export const Install = () => {
   const [open, setOpen] = useState(true)
   return (
-    <Connect name='Aptos' open={open} onClose={() => setOpen(false)}>
-      <Connect.Install></Connect.Install>
+    <Connect open={open} onClose={() => setOpen(false)}>
+      <Connect.Install name='Aptos'></Connect.Install>
+    </Connect>
+  )
+}
+
+export const Connecting = () => {
+  const [open, setOpen] = useState(true)
+  return (
+    <Connect open={open} onClose={() => setOpen(false)}>
+      <Connect.Connecting name='Aptos'></Connect.Connecting>
     </Connect>
   )
 }

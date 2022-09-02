@@ -5,7 +5,7 @@
     "declaration": true,// 为每一个 ts 文件生成 .d.ts 文件
     "emitDeclarationOnly": true,
     "declarationMap": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "moduleResolution": "Node",// 规定寻找引入文件的路径为 node 标准
     "allowSyntheticDefaultImports": true
   },

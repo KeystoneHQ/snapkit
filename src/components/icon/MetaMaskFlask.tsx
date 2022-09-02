@@ -1,4 +1,3 @@
-import React from 'react'
 import { IconProps } from './types'
 
 export function MetaMaskFlask({ className, width = '72', height = '72' }: IconProps) {

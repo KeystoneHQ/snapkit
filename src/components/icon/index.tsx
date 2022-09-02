@@ -8,6 +8,8 @@ import { Chrome } from './Chrome'
 import { Firefox } from './Firefox'
 import { Brave } from './Brave'
 import { Edge } from './Edge'
+import { Aptos } from './Aptos'
+import { Connect } from './Connect'
 
 export function Icon () {
   return <></>
@@ -22,3 +24,5 @@ Icon.Chrome = Chrome
 Icon.Firefox = Firefox
 Icon.Brave = Brave
 Icon.Edge = Edge
+Icon.Aptos = Aptos
+Icon.Connect = Connect

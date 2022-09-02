@@ -1,8 +1,15 @@
-import React from 'react'
 import { IconProps } from './types'
 
-export function MetaMask ({ className, width = '72', height = '72' }: IconProps) {
-  return (
+interface MetaMaskProps extends IconProps {
+  solid?: boolean
+}
+
+export function MetaMask ({ className, width = '72', height = '72', solid, color }: MetaMaskProps) {
+  return solid ? (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M14.5 6.5H14.7785L15.0385 6.40002L20.0734 4.46352L20.4388 5.55996L19.0448 11.1362L18.9388 11.56L19.077 11.9743L20.409 15.9705L19.5814 18.1775L16.5371 17.3077L15.7614 17.0861L15.1488 17.6111L12.9451 19.5H11.0549L8.85119 17.6111L8.23864 17.0861L7.46292 17.3077L4.41857 18.1775L3.59096 15.9705L4.92302 11.9743L5.06115 11.56L4.95521 11.1362L3.56115 5.55996L3.92663 4.46352L8.96153 6.40002L9.22148 6.5H9.5H14.5ZM14.5 5L19.5985 3.03902L21 2.5L21.4748 3.92449L22 5.5L20.5 11.5L22 16L20.5 20L16.125 18.75L13.5 21H10.5L7.875 18.75L3.5 20L2 16L3.5 11.5L2 5.5L2.52517 3.92449L3 2.5L4.40146 3.03902L9.5 5H14.5ZM9.99994 12H7.99994L7 13L10.4999 14L9.99994 12ZM13.4999 14L17 13L16 12H14L13.4999 14ZM9.75 17.75L10.5 15.5H13.5L14.25 17.75H9.75Z" fill={color}/>
+    </svg>
+  ) : (
     <svg width={width} height={height} viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <path d="M66.3001 3.99988L40.0201 23.4399L44.9201 11.9799L66.3001 3.99988Z" fill="#E17726" stroke="#E17726" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M5.70017 3.99988L31.7402 23.5999L27.0802 11.9999L5.70017 3.99988ZM56.8402 49.0599L49.8402 59.7399L64.8202 63.8599L69.1002 49.2999L56.8402 49.0599ZM2.92017 49.2999L7.18017 63.8599L22.1202 59.7399L15.1602 49.0599L2.92017 49.2999Z" fill="#E27625" stroke="#E27625" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="round" />
