@@ -6,19 +6,19 @@ export function Browser () {
   return (
     <div className='t-center'>
       <div className={`flex justify-center ${styles.browsers}`}>
-        <a className='bg-hover-ntd04 transition' href='/'>
+        <a className='bg-hover-ntd04 a-transition' href='/'>
           <Icon.Chrome></Icon.Chrome>
           <div className='t-h5 c-n60'>Chrome</div>
         </a>
-        <a className='bg-hover-ntd04 transition' href='/'>
+        <a className='bg-hover-ntd04 a-transition' href='/'>
           <Icon.Firefox></Icon.Firefox>
           <div className='t-h5 c-n60'>Firefox</div>
         </a>
-        <a className='bg-hover-ntd04 transition' href='/'>
+        <a className='bg-hover-ntd04 a-transition' href='/'>
           <Icon.Brave></Icon.Brave>
           <div className='t-h5 c-n60'>Brave</div>
         </a>
-        <a className='bg-hover-ntd04 transition' href='/'>
+        <a className='bg-hover-ntd04 a-transition' href='/'>
           <Icon.Edge></Icon.Edge>
           <div className='t-h5 c-n60'>Edge</div>
         </a>
