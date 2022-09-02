@@ -1,29 +1,16 @@
 import React from 'react'
 import { Install } from './Install'
-import { Modal } from './Modal'
+import { Modal } from '../base/Modal'
+import styles from './index.module.scss'
 
 interface ConnectProps {
   open: boolean
+  onClose(): void
   children: JSX.Element | JSX.Element[]
 }
 
-// const Connect = ({ open, children }: ConnectProps) => (<Modal open={open}>{children}</Modal>)
-
-// class Connect extends React.Component {
-//   constructor(props: ConnectProps) {
-//     super(props)
-//   }
-//   render() {
-//     return <Modal open={this.props.open}>{this.props.children}</Modal>
-//   }
-
-//   static Install () {
-//     return Install
-//   }
-// }
-
-export function Connect ({ open, children }: ConnectProps) {
-  return <Modal open={open}>{children}</Modal>
+export function Connect ({ open, onClose, children }: ConnectProps) {
+  return <Modal open={open} onClose={onClose} closeIcon={true} size='mini' className={`t-center ${styles.modal}`}>{children}</Modal>
 }
 
 Connect.Install = Install

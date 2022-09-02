@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { Connect } from './index'
 
 export default {
@@ -10,8 +10,11 @@ export default {
   }
 } as ComponentMeta<typeof Connect>
 
-export const Install = () => (
-  <Connect open={true}>
-    <Connect.Install></Connect.Install>
-  </Connect>
-)
+export const Install = () => {
+  const [open, setOpen] = useState(true)
+  return (
+    <Connect open={open} onClose={() => setOpen(false)}>
+      <Connect.Install></Connect.Install>
+    </Connect>
+  )
+}

@@ -13,3 +13,9 @@
     font-weight: 600;
   }
 }
+
+@each $k in center, left, right, justify, start, end {
+  .t-#{$k} {
+    text-align: #{$k};
+  }
+}

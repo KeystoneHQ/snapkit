@@ -15,6 +15,9 @@ Primary.args = { primary: true, children: <span>Primary</span> }
 export const Disabled = Template.bind({})
 Disabled.args = { primary: true, disabled: true, children: <span>Disabled</span> }
 
+export const Loading = Template.bind({})
+Loading.args = { loading: true }
+
 export const Size = () => <>
   <p>
     <Button primary size='small'>

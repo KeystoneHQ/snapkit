@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Button.module.scss'
+import { Loading } from './Loading'
 
 export interface ButtonProps {
   primary?: boolean
@@ -7,6 +8,7 @@ export interface ButtonProps {
   size?: 'large'|'medium'|'small'|null
   tagName?: string
   className?: string
+  loading?: boolean
   children: JSX.Element | JSX.Element[]
   [propName: string]: unknown
 }
@@ -17,6 +19,7 @@ export function Button ({
   size,
   tagName,
   className,
+  loading,
   children,
   ...args
 }: ButtonProps) {
@@ -25,12 +28,12 @@ export function Button ({
     medium: styles.medium,
     small: styles.small,
   }
-  const style = `${styles.btn} ${primary ? styles.primary : styles.default} ${size ? sizeStyles[size] : ''} ${className}`
+  const style = `${styles.btn} ${primary ? styles.primary : styles.default} ${size ? sizeStyles[size] : ''} ${loading ? styles.loading : ''} ${className}`
   const CustomTag = tagName || 'button' as keyof JSX.IntrinsicElements
 
   return React.createElement(CustomTag, {
     className: style,
     disabled: disabled,
     ...args
-  }, children)
+  }, loading ? <Loading></Loading> : children)
 }

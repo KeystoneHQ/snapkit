@@ -39,6 +39,15 @@
     }
   }
 
+  &.loading {
+    background: var(--color-n30);
+    cursor: default;
+
+    &:hover {
+      background: var(--color-n30);
+    }
+  }
+
   &.disabled {
     cursor: default;
   }
