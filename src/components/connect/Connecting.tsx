@@ -4,18 +4,25 @@ import styles from './Connecting.module.scss'
 
 interface ConnectingProps {
   name?: string
+  logo?: JSX.Element
   loading?: boolean
   onConnect?(): void
 }
 
-export function Connecting ({ name, loading, onConnect }: ConnectingProps) {
+export function Connecting ({ name, logo, loading, onConnect }: ConnectingProps) {
   return (
     <div className='sk-t-center'>
       <div className={`${styles.logos} sk-flex sk-justify-center sk-items-center`}>
         <div className={`${styles.logo} sk-flex sk-items-center sk-justify-center`}>
-          <Icon.Aptos width='40px' height='40px'></Icon.Aptos>
+          {logo ? logo : <Icon.Aptos width='40px' height='40px'></Icon.Aptos>}
         </div>
-        <Icon.Connect className={styles.connect}></Icon.Connect>
+        {
+          loading
+          ? <div className={`${styles['dot-pulse']} ${styles.connect}`}>
+            <div className={styles['dot-pulse__dot']}></div>
+          </div>
+          : <Icon.Connect className={styles.connect}></Icon.Connect>
+        }
         <div className={`${styles.logo} sk-flex sk-items-center sk-justify-center`}>
           <Icon.MetaMask width='40px' height='40px'></Icon.MetaMask>
         </div>

@@ -1,5 +1,6 @@
-import { ComponentMeta } from '@storybook/react'
-import React, { useState } from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { useState } from 'react'
+import { Icon } from '../icon'
 import { Connect } from './index'
 
 export default {
@@ -10,29 +11,67 @@ export default {
   }
 } as ComponentMeta<typeof Connect>
 
-export const Auto = () => {
-  const [open, setOpen] = useState(true)
+const SNAP_NAME = 'Aptos'
+const SNAP_LOGO = <Icon.Aptos></Icon.Aptos>
+
+const NoChildrenTemplate: ComponentStory<typeof Connect> = (args) => {
+  const [open, setOpen] = useState(args.open)
+  const [loading, setLoading] = useState(args.loading)
+  const [connected, setConnected] = useState(args.connected)
   return (
-    <Connect name='Aptos' open={open} onClose={() => setOpen(false)}></Connect>
+    <Connect
+      {...args}
+      open={open}
+      loading={loading}
+      connected={connected}
+      onClose={() => {
+        setOpen(false)
+      }}
+      onConnect={() => {
+        setLoading(true)
+        setTimeout(() => {
+          setLoading(false)
+          setConnected(true)
+        }, 3000)
+      }}
+      onGetAddress={() => {
+        setLoading(true)
+        setTimeout(() => {
+          setLoading(false)
+          setOpen(false)
+        }, 3000)
+      }}
+    ></Connect>
   )
 }
 
+export const NoChildren = NoChildrenTemplate.bind({})
+
+NoChildren.args = {
+  name: SNAP_NAME,
+  logo: SNAP_LOGO,
+  open: false,
+  loading: false,
+  connected: false,
+  onConnect: () => { console.log('onConnect') },
+  onGetAddress: () => { console.log('onGetAddress') },
+}
+
 export const Install = () => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   return (
     <Connect open={open} onClose={() => setOpen(false)}>
-      <Connect.Install name='Aptos'></Connect.Install>
+      <Connect.Install name={SNAP_NAME}></Connect.Install>
     </Connect>
   )
 }
 
 export const Connecting = () => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   return (
     <Connect open={open} onClose={() => setOpen(false)}>
-      <Connect.Connecting name='Aptos' loading={loading} onConnect={() => {
-        console.log('onConnect')
+      <Connect.Connecting name={SNAP_NAME} loading={loading} onConnect={() => {
         setLoading(true)
       }}></Connect.Connecting>
     </Connect>
@@ -40,15 +79,17 @@ export const Connecting = () => {
 }
 
 export const Address = () => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
-  const onGetAddress = () => {
+
+  function onGetAddress() {
+    console.log('onGetAddress')
     setLoading(true)
-    console.log('onGetAddress', loading)
   }
+
   return (
     <Connect open={open} onClose={() => setOpen(false)}>
-      <Connect.Address name='Aptos' loading={loading} onGetAddress={onGetAddress}></Connect.Address>
+      <Connect.Address name={SNAP_NAME} loading={loading} onGetAddress={onGetAddress}></Connect.Address>
     </Connect>
   )
 }

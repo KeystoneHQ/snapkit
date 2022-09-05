@@ -9,6 +9,7 @@ import { Address } from './Address'
 
 interface ConnectProps {
   name?: string
+  logo?: JSX.Element
   open: boolean
   loading?: boolean
   connected?: boolean
@@ -22,7 +23,7 @@ function isBrowserSupport () {
   return true
 }
 
-export function Connect ({ name, open, loading, connected, onConnect, onGetAddress, onClose, children }: ConnectProps) {
+export function Connect ({ name, logo, open, loading, connected, onConnect, onGetAddress, onClose, children }: ConnectProps) {
   const modalDefaultClass = `sk-t-center ${styles.modal}`
   const [step, setStep] = useState(children)
   const [size, setSize] = useState('mini' as StrictModalProps['size'])
@@ -38,6 +39,7 @@ export function Connect ({ name, open, loading, connected, onConnect, onGetAddre
         setModalClass(modalDefaultClass)
         const props = {
           name,
+          logo,
           loading,
           onGetAddress
         }
@@ -47,13 +49,14 @@ export function Connect ({ name, open, loading, connected, onConnect, onGetAddre
         setModalClass(modalDefaultClass)
         const props = {
           name,
+          logo,
           loading,
           onConnect
         }
         setStep(<Connecting {...props} ></Connecting>)
       }
     }
-  }, [children])
+  }, [children, connected, loading])
 
   return <Modal open={open} onClose={onClose} closeIcon={true} size={size} className={modalClass}>{step}</Modal>
 }
