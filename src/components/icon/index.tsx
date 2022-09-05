@@ -10,6 +10,7 @@ import { Brave } from './Brave'
 import { Edge } from './Edge'
 import { Aptos } from './Aptos'
 import { Connect } from './Connect'
+import { Reveal } from './Reveal'
 
 export function Icon () {
   return <></>
@@ -26,3 +27,4 @@ Icon.Brave = Brave
 Icon.Edge = Edge
 Icon.Aptos = Aptos
 Icon.Connect = Connect
+Icon.Reveal = Reveal

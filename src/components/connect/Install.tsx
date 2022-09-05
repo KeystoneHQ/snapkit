@@ -4,7 +4,7 @@ import { Icon } from '../icon'
 import styles from './Install.module.scss'
 
 interface InstallProps {
-  name: string
+  name?: string
 }
 
 export function Install ({ name }: InstallProps) {

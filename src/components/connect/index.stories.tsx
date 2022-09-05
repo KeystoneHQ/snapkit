@@ -28,9 +28,27 @@ export const Install = () => {
 
 export const Connecting = () => {
   const [open, setOpen] = useState(true)
+  const [loading, setLoading] = useState(false)
   return (
     <Connect open={open} onClose={() => setOpen(false)}>
-      <Connect.Connecting name='Aptos'></Connect.Connecting>
+      <Connect.Connecting name='Aptos' loading={loading} onConnect={() => {
+        console.log('onConnect')
+        setLoading(true)
+      }}></Connect.Connecting>
+    </Connect>
+  )
+}
+
+export const Address = () => {
+  const [open, setOpen] = useState(true)
+  const [loading, setLoading] = useState(false)
+  const onGetAddress = () => {
+    setLoading(true)
+    console.log('onGetAddress', loading)
+  }
+  return (
+    <Connect open={open} onClose={() => setOpen(false)}>
+      <Connect.Address name='Aptos' loading={loading} onGetAddress={onGetAddress}></Connect.Address>
     </Connect>
   )
 }

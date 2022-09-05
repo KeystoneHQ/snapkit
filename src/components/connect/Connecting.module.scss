@@ -2,10 +2,26 @@
   margin: 0 16px;
 }
 
+.logos {
+  padding: 40px 0 24px;
+}
+
 .logo {
   width: 88px;
   height: 88px;
   border-radius: 44px;
   box-sizing: border-box;
   border: 1px solid var(--sk-color-ntd10);
+}
+
+.help {
+  padding: 16px 0;
+}
+
+.btn {
+  margin-top: 64px;
+
+  &-address {
+    margin-top: 98px;
+  }
 }
