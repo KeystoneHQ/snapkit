@@ -9,11 +9,12 @@
   "scripts": {
     "dev": "start-storybook -p 6006",
     "clean": "rimraf ./dist",
-    "build": "npm run build:component && npm run build:ts",
+    "build": "npm run clean && npm run build:component && npm run build:ts",
     "build:css": "sass ./src/styles/index.scss ./dist/index.css",
     "build:ts": "tsc --build tsconfig.build.json",
     "build:component": "vite build",
-    "build:storybook": "build-storybook"
+    "build:storybook": "build-storybook",
+    "publish:local": "npm run build && yalc push --private"
   },
   "peerDependencies": {
     "react": "^18.2.0",
