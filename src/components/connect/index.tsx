@@ -19,9 +19,30 @@ interface ConnectProps {
   children?: JSX.Element | JSX.Element[]
 }
 
-function isBrowserSupport () {
-  return true
+export function isBrowserSupport (ua: string) {
+  let browser = ''
+  if (ua.includes('Firefox')) {
+    browser = 'Firefox'
+  } else if (ua.includes('SamsungBrowser')) {
+    browser = 'SamsungBrowser'
+  } else if (ua.includes('Opera') || ua.includes('OPR')) {
+    browser = 'Opera'
+  } else if (ua.includes('Trident')) {
+    browser = 'IE'
+  } else if (ua.includes('Edge')) {
+    browser = 'Edge (Legacy)'
+  } else if (ua.includes('Edg')) {
+    browser = 'Edge'
+  } else if (ua.includes('Chrome')) {
+    browser = 'Chrome'
+  } else if (ua.includes('Safari')) {
+    browser = 'Safari'
+  }
+  // 由于Brave的UserAgent跟Chrome相同，因此视为Chrome
+  return /^(Chrome|Firefox|Edge)/.test(browser)
 }
+
+const isBrowserOk = isBrowserSupport(navigator.userAgent)
 
 export function Connect ({ name, logo, open, loading, connected, onConnect, onGetAddress, onClose, children }: ConnectProps) {
   const modalDefaultClass = `sk-t-center ${styles.modal}`
@@ -31,7 +52,7 @@ export function Connect ({ name, logo, open, loading, connected, onConnect, onGe
   
   useEffect(() => {
     if (!children) {
-      if (!isBrowserSupport()) {
+      if (!isBrowserOk) {
         setSize('tiny')
         setModalClass(`${modalDefaultClass} ${styles.browser}`)
         setStep(<Browser></Browser>)
