@@ -1,4 +1,3 @@
-import React from 'react'
 import { IconProps } from './types'
 
 export function Aptos ({ className, width = '40', height = '40' }: IconProps) {

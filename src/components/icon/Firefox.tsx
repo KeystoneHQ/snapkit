@@ -1,4 +1,3 @@
-import React from 'react'
 import { IconProps } from './types'
 
 export function Firefox({ className, width = '56', height = '56' }: IconProps) {

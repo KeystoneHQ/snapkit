@@ -1,4 +1,3 @@
-import React from 'react'
 import { IconProps } from './types'
 
 export function Install ({ className, width = '24', height = '24', color }: IconProps) {

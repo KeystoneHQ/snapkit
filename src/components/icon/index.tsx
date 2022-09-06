@@ -23,6 +23,10 @@ import { Settings } from './Settings'
 import { Wallet } from './Wallet'
 import { Back } from './Back'
 import { Scan } from './Scan'
+import { Connected } from './Connected'
+import { Disconnected } from './Disconnected'
+import { Refresh } from './Refresh'
+import { Discord } from './Discord'
 
 export function Icon () {
   return <></>
@@ -42,6 +46,8 @@ Icon.Install = Install
 Icon.Close = Close
 Icon.Check = Check
 Icon.Connect = Connect
+Icon.Connected = Connected
+Icon.Disconnected = Disconnected
 Icon.Reveal = Reveal
 Icon.Send = Send
 Icon.Receive = Receive
@@ -49,8 +55,10 @@ Icon.Swap = Swap
 Icon.Transaction = Transaction
 Icon.NFT = NFT
 Icon.Github = Github
+Icon.Discord = Discord
 Icon.Menu = Menu
 Icon.Settings = Settings
 Icon.Wallet = Wallet
 Icon.Back = Back
 Icon.Scan = Scan
+Icon.Refresh = Refresh

@@ -1,4 +1,3 @@
-import React from 'react'
 import { IconProps } from './types'
 
 export function Connect ({ className, width = '32', height = '32', color }: IconProps) {
