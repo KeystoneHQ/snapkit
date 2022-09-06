@@ -1,18 +1,18 @@
 {
   "compilerOptions": {
-    "outDir": "dist/types",// 生成目录
-    "module": "esnext",// 格式
-    "declaration": true,// 为每一个 ts 文件生成 .d.ts 文件
+    "outDir": "dist/types",
+    "module": "esnext",
+    "declaration": true, // generate .d.ts file for every .ts file
     "emitDeclarationOnly": true,
     "declarationMap": true,
     "jsx": "react-jsx",
-    "moduleResolution": "Node",// 规定寻找引入文件的路径为 node 标准
+    "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
-  "include": [// 要编译哪些文件
+  "include": [
     "src"
   ],
-  "exclude": [// 排除不需要编译的文件
+  "exclude": [
     "src/**/*.test.tsx",
     "src/**/*.stories.tsx",
     "src/setupTests.ts",

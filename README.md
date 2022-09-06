@@ -1,38 +1,44 @@
 # snapkit
 
-## 使用
 
-### 引入CSS
+## Usage
+
+### Import CSS
 `import 'snapkit/dist/style.css'`
-### 引入组件
+### Import Component
 `import 'snapkit'`
-### 文档
-暂无对外开放的文档，需要使用storybook自行构建。
+### Document
+There is no document open to the public, you need to use storybook to build it yourself.
 
 
-## 使用本地包
+## Use package in local
 
-### 安装本地包管理器
+### Install a local package manager
 `npm i yalc -g`
 
-### 发布包
-在snapkit目录执行：
+### Publish package
+Execute in the snapkit directory: 
 `npm run publish:local`
 
-### 项目中添加依赖
-在项目目录中执行：
+### Add dependency to the project
+Execute in the project directory: 
 `yalc add snapkit --link`
 
 
-## 开发
+## Development
 
-### 安装
+### Install
 `npm i`
-### 启动
+### Start
 `npm run dev`
-### 发布
+### Publish Component
 `npm run build`
+### Publish Document
+`npm run build:storybook`
+### Publish Component to the local package manager
+`npm run publish:local`
 
-## 开发规范
-1. storybook文件以“xxx.stories.tsx”命名；
-2. css module以“xxx.module.scss”命名；
+
+## Development specification
+1. The storybook file is named as "xxx.stories.tsx";
+2. The css module is named as "xxx.module.scss";
