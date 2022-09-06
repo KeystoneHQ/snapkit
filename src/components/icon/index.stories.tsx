@@ -16,7 +16,7 @@ export const All = () => {
     )
   })
   return (
-    <div className='sk-flex sk-items-end'>
+    <div className='sk-flex sk-items-end sk-flex-wrap'>
       {icons}
     </div>
   )
