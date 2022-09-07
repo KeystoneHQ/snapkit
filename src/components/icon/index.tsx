@@ -27,38 +27,51 @@ import { Connected } from './Connected'
 import { Disconnected } from './Disconnected'
 import { Refresh } from './Refresh'
 import { Discord } from './Discord'
+import { IconProps } from './types'
+import React, { Attributes, FunctionComponent } from 'react'
 
 export function Icon () {
   return <></>
 }
 
-Icon.MetaMask = MetaMask
-Icon.MetaMaskFlask = MetaMaskFlask
-Icon.Chrome = Chrome
-Icon.Firefox = Firefox
-Icon.Brave = Brave
-Icon.Edge = Edge
-Icon.Aptos = Aptos
-Icon.Import = Import
-Icon.Back = Back
-Icon.ArrowRight = ArrowRight
-Icon.Install = Install
-Icon.Close = Close
-Icon.Check = Check
-Icon.Connect = Connect
-Icon.Connected = Connected
-Icon.Disconnected = Disconnected
-Icon.Reveal = Reveal
-Icon.Send = Send
-Icon.Receive = Receive
-Icon.Swap = Swap
-Icon.Transaction = Transaction
-Icon.NFT = NFT
-Icon.Github = Github
-Icon.Discord = Discord
-Icon.Menu = Menu
-Icon.Settings = Settings
-Icon.Wallet = Wallet
-Icon.Back = Back
-Icon.Scan = Scan
-Icon.Refresh = Refresh
+function format (component: FunctionComponent) {
+  return function Icon (props: IconProps) {
+    return (
+      <span style={{
+        display: 'inline-flex',
+        alignItems: 'center'
+      }}>{'\u200b'}{React.createElement(component, props as Attributes)}</span>
+    )
+  }
+}
+
+Icon.MetaMask = format(MetaMask)
+Icon.MetaMaskFlask = format(MetaMaskFlask)
+Icon.Chrome = format(Chrome)
+Icon.Firefox = format(Firefox)
+Icon.Brave = format(Brave)
+Icon.Edge = format(Edge)
+Icon.Aptos = format(Aptos)
+Icon.Import = format(Import)
+Icon.Back = format(Back)
+Icon.ArrowRight = format(ArrowRight)
+Icon.Install = format(Install)
+Icon.Close = format(Close)
+Icon.Check = format(Check)
+Icon.Connect = format(Connect)
+Icon.Connected = format(Connected)
+Icon.Disconnected = format(Disconnected)
+Icon.Reveal = format(Reveal)
+Icon.Send = format(Send)
+Icon.Receive = format(Receive)
+Icon.Swap = format(Swap)
+Icon.Transaction = format(Transaction)
+Icon.NFT = format(NFT)
+Icon.Github = format(Github)
+Icon.Discord = format(Discord)
+Icon.Menu = format(Menu)
+Icon.Settings = format(Settings)
+Icon.Wallet = format(Wallet)
+Icon.Back = format(Back)
+Icon.Scan = format(Scan)
+Icon.Refresh = format(Refresh)

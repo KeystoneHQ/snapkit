@@ -11,7 +11,7 @@ export const All = () => {
     return (
       <div className='sk-t-center' style={{padding: '20px'}} key={k}>
         <Item width='24px' height='24px' />
-        <div className='title'>{k}</div>
+        <div style={{marginTop: '6px'}} className='title'>{k}</div>
       </div>
     )
   })
@@ -21,3 +21,7 @@ export const All = () => {
     </div>
   )
 }
+
+export const Inline = () => (
+  <p>This is a icon.<Icon.Back></Icon.Back>This is a example.</p>
+)
