@@ -28,13 +28,13 @@ import { Disconnected } from './Disconnected'
 import { Refresh } from './Refresh'
 import { Discord } from './Discord'
 import { IconProps } from './types'
-import React, { Attributes, FunctionComponent } from 'react'
+import React, { Attributes, FC } from 'react'
 
 export function Icon () {
   return <></>
 }
 
-function format (component: FunctionComponent) {
+function format (component: FC) {
   return function Icon (props: IconProps) {
     return (
       <span style={{

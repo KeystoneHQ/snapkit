@@ -1,0 +1,26 @@
+.container {
+  width: 96px;
+  height: 128px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96px;
+  height: 96px;
+  border: 1px solid var(--sk-color-n30);
+  border-radius: 28px;
+}
+
+.text {
+  display: block;
+  color: var(--sk-color-n60);
+  height: 20px;
+  margin-top: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+}

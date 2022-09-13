@@ -1,37 +1,54 @@
 :root {
   // theme
-  --sk-color-pri60: #007A6A;
+  --sk-color-pri60: #007a6a;
   --sk-color-pri50: #008585;
   --sk-color-pri02: rgba(7, 163, 142, 0.2);
   --sk-color-pri01: rgba(7, 163, 142, 0.1);
-  --sk-color-pg006: linear-gradient(185.06deg, rgba(0, 133, 133, 0.012) 4.07%, rgba(0, 133, 133, 0.06) 95.93%);
-  --sk-color-pgd: radial-gradient(50% 50% at 0% 0%, rgba(0, 133, 133, 0.08) 0%, rgba(0, 133, 133, 0) 100%), radial-gradient(50% 50% at 100% 0%, rgba(255, 150, 31, 0.1) 0%, rgba(255, 150, 31, 0) 100%);
+  --sk-color-pg006: linear-gradient(
+    185.06deg,
+    rgba(0, 133, 133, 0.012) 4.07%,
+    rgba(0, 133, 133, 0.06) 95.93%
+  );
+  --sk-color-pgd: radial-gradient(
+      50% 50% at 0% 0%,
+      rgba(0, 133, 133, 0.08) 0%,
+      rgba(0, 133, 133, 0) 100%
+    ),
+    radial-gradient(
+      50% 50% at 100% 0%,
+      rgba(255, 150, 31, 0.1) 0%,
+      rgba(255, 150, 31, 0) 100%
+    );
   // colors
   --sk-color-n80: #111214;
-  --sk-color-n60: #656D85;
-  --sk-color-n50: #9095A3;
-  --sk-color-n40: #C5CAD6;
-  --sk-color-n30: #E1E6F0;
-  --sk-color-n20: #F0F3FA;
-  --sk-color-n10: #F7F9FC;
-  --sk-color-n02: #E1E6F0;
-  --sk-color-n00: #FFFFFF;
-  --sk-color-ng40: linear-gradient(180deg, #E1E6F0 0%, #CED3E0 100%);
-  --sk-color-ng20: linear-gradient(180deg, #F0F3FA 0%, rgba(240, 243, 250, 0) 100%);
-  --sk-color-ng10: linear-gradient(222.5deg, rgba(250, 251, 255, 0.8) 47.82%, rgba(245, 247, 252, 0) 100%);
+  --sk-color-n60: #656d85;
+  --sk-color-n50: #9095a3;
+  --sk-color-n40: #c5cad6;
+  --sk-color-n30: #e1e6f0;
+  --sk-color-n20: #f0f3fa;
+  --sk-color-n10: #f7f9fc;
+  --sk-color-n02: #e1e6f0;
+  --sk-color-n00: #ffffff;
+  --sk-color-ng40: linear-gradient(180deg, #e1e6f0 0%, #ced3e0 100%);
+  --sk-color-ng20: linear-gradient(180deg, #f0f3fa 0%, rgba(240, 243, 250, 0) 100%);
+  --sk-color-ng10: linear-gradient(
+    222.5deg,
+    rgba(250, 251, 255, 0.8) 47.82%,
+    rgba(245, 247, 252, 0) 100%
+  );
   --sk-color-ntd40: rgba(0, 0, 0, 0.4);
   --sk-color-ntd20: rgba(0, 0, 0, 0.2);
   --sk-color-ntd10: rgba(0, 0, 0, 0.1);
   --sk-color-ntd04: rgba(0, 0, 0, 0.04);
   --sk-color-ntl20: rgba(255, 255, 255, 0.2);
   --sk-color-ntl80: rgba(255, 255, 255, 0.8);
-  --sk-color-white: #FFFFFF;
+  --sk-color-white: #ffffff;
   --sk-color-black: #000000;
-  --sk-color-g60: #21A35D;
-  --sk-color-g50: #00B87A;
-  --sk-color-b60: #1F69FF;
-  --sk-color-r60: #F54814;
-  --sk-color-y50: #FFB60A;
+  --sk-color-g60: #21a35d;
+  --sk-color-g50: #00b87a;
+  --sk-color-b60: #1f69ff;
+  --sk-color-r60: #f54814;
+  --sk-color-y50: #ffb60a;
 
   // font: h1~h5
   --sk-font-size-h1: 24px;
