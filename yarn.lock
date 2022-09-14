@@ -6151,7 +6151,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csstype@npm:^3.0.2":
+"csstype@npm:^3.0.2, csstype@npm:^3.0.5":
   version: 3.1.1
   resolution: "csstype@npm:3.1.1"
   checksum: 7c8b8c5923049d84132581c13bae6e1faf999746fe3998ba5f3819a8e1cdc7512ace87b7d0a4a69f0f4b8ba11daf835d4f1390af23e09fc4f0baad52c084753a
@@ -8646,7 +8646,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"htmlparser2@npm:^6.1.0":
+"htmlparser2@npm:^6.0.0, htmlparser2@npm:^6.1.0":
   version: 6.1.0
   resolution: "htmlparser2@npm:6.1.0"
   dependencies:
@@ -13062,6 +13062,7 @@ __metadata:
     rimraf: ^3.0.2
     sass: ^1.54.7
     semantic-ui-react: ^2.1.3
+    twind: ^0.16.17
     typescript: ^4.8.3
     vite: ^3.0.7
   peerDependencies:
@@ -13512,6 +13513,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"style-vendorizer@npm:^2.0.0":
+  version: 2.2.3
+  resolution: "style-vendorizer@npm:2.2.3"
+  checksum: 62892cbfe9a1ccb23ef096c320d0c59e01a93d8999c7286db4a2051ee9296210f8d982af5aeb7b6a1e4d6f5bce80036f479a570b407fe5a4174580026fc11fe7
+  languageName: node
+  linkType: hard
+
 "supports-color@npm:^5.3.0":
   version: 5.5.0
   resolution: "supports-color@npm:5.5.0"
@@ -13893,6 +13901,22 @@ __metadata:
   version: 0.0.0
   resolution: "tty-browserify@npm:0.0.0"
   checksum: c0c68206565f1372e924d5cdeeff1a0d9cc729833f1da98c03d78be8f939e5f61a107bd0ab77d1ef6a47d62bb0e48b1081fbea273acf404959e22fd3891439c5
+  languageName: node
+  linkType: hard
+
+"twind@npm:^0.16.17":
+  version: 0.16.17
+  resolution: "twind@npm:0.16.17"
+  dependencies:
+    csstype: ^3.0.5
+    htmlparser2: ^6.0.0
+    style-vendorizer: ^2.0.0
+  peerDependencies:
+    typescript: ^4.1.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: b62fa7ad12c95372f5575528d810c4fc7c93c3b940139e872a6e9d4f50bc72c2a69f438eac88fe0e85eb13bf3426f4d434c61017b6328857bb9118e92662220c
   languageName: node
   linkType: hard
 

@@ -1,10 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { faker } from '@faker-js/faker'
+import { css, tw } from 'twind/css'
 import { List } from 'semantic-ui-react'
+import BigNumber from 'bignumber.js'
 import { TransactionInfo, TransactionInfoProps } from '.'
 import { ActionButton } from '../balance/ActionButton'
 import { Icon } from '../icon'
-import BigNumber from 'bignumber.js'
 
 const Template: ComponentStory<typeof TransactionInfo> = (args: TransactionInfoProps) => (
   <>
@@ -55,8 +56,26 @@ export const InList: ComponentStory<typeof TransactionInfo> = (
           }
         })
         .map((args, idx) => {
-          console.log('%c 🍩 args', 'color:#33a5ff', args)
-          return <List.Item key={idx}>{<TransactionInfo {...args} />}</List.Item>
+          return (
+            <List.Item className={tw`!p-0`} key={idx}>
+              {
+                <TransactionInfo
+                  {...args}
+                  className={tw(css`
+                    padding: 16px;
+                    border-bottom: 1px solid var(--sk-color-ntd04);
+                    border-radius: 16px;
+                    transition: var(--sk-transition);
+                    &:hover {
+                      background-color: var(--sk-color-ntd04);
+                      transition: var(--sk-transition);
+                      cursor: pointer;
+                    }
+                  `)}
+                />
+              }
+            </List.Item>
+          )
         })}
     </List>
   </>
@@ -75,7 +94,7 @@ export default {
     ),
     typeText: 'Sent',
     balance: 1556.25,
-    balanceClassName: '',
+    balanceClassName: 'sk-c-r60',
     addressPrefix: 'To',
     address: 'bcasdfasdfsadfkljwerasdfklasdf',
     datetime: new Date()
