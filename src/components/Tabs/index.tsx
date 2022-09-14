@@ -6,11 +6,14 @@ import { TabProps } from './Tab'
 export interface TabsProps {
   children: ReactElement<TabProps>[]
   defaultActivedIndex?: number
-  onChange: (index: number) => void
+  onChange?: (index: number) => void
 }
 
 export function Tabs({ defaultActivedIndex, children,  onChange }: TabsProps) {
   const [activedIndex, setActivedIndex] = useState(defaultActivedIndex ?? 0)
+
+  // set default onChange return activedIndex
+  if (!onChange) onChange = () => activedIndex
 
   return (
     <TabsContext.Provider value={{ activedIndex, setActivedIndex: setActivedIndex, onChange: onChange }}>

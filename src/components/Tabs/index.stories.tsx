@@ -14,9 +14,5 @@ export const Example = Template
 export default {
   title: 'Tabs',
   component: Tabs,
-  args: {
-    onChange(index) {
-        console.log(index)
-    },
-  }
+  args: {}
 } as ComponentMeta<typeof Tabs>
