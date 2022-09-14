@@ -1,7 +1,7 @@
 {
   "name": "snapkit",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.2",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -18,7 +18,7 @@
     "build:ts": "tsc --build tsconfig.build.json",
     "build:component": "vite build",
     "build:storybook": "build-storybook",
-    "publish:git": "npx publish-to-git",
+    "publish": "npm run build && npx publish-to-git",
     "publish:local": "npm run build && yalc push --private",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
