@@ -27,15 +27,14 @@ import { Connected } from './Connected'
 import { Disconnected } from './Disconnected'
 import { Refresh } from './Refresh'
 import { Discord } from './Discord'
-import { IconProps } from './types'
-import React, { Attributes, FC } from 'react'
+import React, { Attributes, ComponentProps } from 'react'
 
 export function Icon () {
   return <></>
 }
 
-function format (component: FC) {
-  return function Icon (props: IconProps) {
+function format <T extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>>(component: T) {
+  return function Icon (props: ComponentProps<typeof component>) {
     return (
       <span style={{
         display: 'inline-flex',

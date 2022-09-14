@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "lib": [
+      "ES2015",
+      "DOM"
+    ],
     "outDir": "dist/types",
     "module": "esnext",
     "declaration": true, // generate .d.ts file for every .ts file
@@ -16,5 +20,6 @@
     "src/**/*.test.tsx",
     "src/**/*.stories.tsx",
     "src/setupTests.ts",
+    "node_modules/*"
   ]
 }

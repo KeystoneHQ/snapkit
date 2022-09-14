@@ -1,6 +1,6 @@
 import { IconProps } from './types'
 
-interface MetaMaskProps extends IconProps {
+export interface MetaMaskProps extends IconProps {
   solid?: boolean
 }
 
