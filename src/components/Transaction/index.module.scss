@@ -1,0 +1,23 @@
+.container {
+  height: 80px;
+  margin: 0 8px;
+}
+
+.body {
+  display: flex;
+  padding: 16px;
+}
+
+.left {
+  width: 48px;
+  height: 48px;
+}
+
+.right {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.rightBottom {
+  margin-top: 4px;
+}

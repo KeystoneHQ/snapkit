@@ -3,10 +3,15 @@ import { TabsContext } from './helper'
 import styles from './index.module.scss'
 import { TabProps } from './Tab'
 
+interface TabsOnChange {
+  key?: string | number
+  index: number
+}
+
 export interface TabsProps {
   children: ReactElement<TabProps>[]
   defaultActivedIndex?: number
-  onChange?: (index: number) => void
+  onChange?: (props: TabsOnChange) => void
 }
 
 export function Tabs({ defaultActivedIndex, children,  onChange }: TabsProps) {

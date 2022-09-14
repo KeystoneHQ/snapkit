@@ -28,6 +28,7 @@ import { Disconnected } from './Disconnected'
 import { Refresh } from './Refresh'
 import { Discord } from './Discord'
 import React, { Attributes, ComponentProps } from 'react'
+import { Pending } from './Pending'
 
 export function Icon () {
   return <></>
@@ -74,3 +75,4 @@ Icon.Wallet = format(Wallet)
 Icon.Back = format(Back)
 Icon.Scan = format(Scan)
 Icon.Refresh = format(Refresh)
+Icon.Pending = format(Pending)
