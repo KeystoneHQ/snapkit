@@ -10877,15 +10877,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-publish-git@git+https://github.com/andreineculau/npm-publish-git.git":
-  version: 0.0.12
-  resolution: "npm-publish-git@https://github.com/andreineculau/npm-publish-git.git#commit=306384f8fdc71fcdcba72195f212ef07608dae10"
-  bin:
-    npm-publish-git: ./npm-publish-git
-  checksum: 4ced89be06fb3246cc7d84afa7221b951cc80d0878294b71259f93fafdd6de1e695632c9aba557a81e57b84173b34377132580d318996c8f084ea2deb631e6aa
-  languageName: node
-  linkType: hard
-
 "npm-run-path@npm:^2.0.0":
   version: 2.0.2
   resolution: "npm-run-path@npm:2.0.2"
@@ -11943,9 +11934,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"publish-to-git@npm:^1.1.9":
+"publish-to-git@git+https://github.com/reaink/publish-to-git.git":
   version: 1.1.9
-  resolution: "publish-to-git@npm:1.1.9"
+  resolution: "publish-to-git@https://github.com/reaink/publish-to-git.git#commit=32dfc1bdc3d21a87c08b73ea485f38bd8f3e7a37"
   dependencies:
     bluebird: ^3.5.1
     tar: ^4.4.4
@@ -11953,7 +11944,7 @@ __metadata:
     yargs: ^15.3.1
   bin:
     publish-to-git: main.js
-  checksum: 1d69bd220bf12d148a9d06a1592a52784f13c5c55e741a7793bc84487ce8fae292169cc1081b400c0f29af2157ed53eb7e184e76be8ebb68860083b535b27bbf
+  checksum: 85b2071ca56f83638993903775b72710a28bfd1779f9b629a5d9fc2cf28692b65b30cceebcb8f6ab0ad2bc1df9e65360d1b2ff509eede4107221c0b06579d5fb
   languageName: node
   linkType: hard
 
@@ -13232,9 +13223,8 @@ __metadata:
     eslint-plugin-react: ^7.28.0
     eslint-plugin-react-hooks: ^4.3.0
     eslint-plugin-storybook: ^0.6.4
-    npm-publish-git: "git+https://github.com/andreineculau/npm-publish-git.git"
     prettier: ^2.7.1
-    publish-to-git: ^1.1.9
+    publish-to-git: "git+https://github.com/reaink/publish-to-git.git"
     react: ^18.2.0
     react-dom: ^18.2.0
     rimraf: ^3.0.2
