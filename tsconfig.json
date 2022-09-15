@@ -21,7 +21,18 @@
     "types": [
       "vite/client"
     ],
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "plugins": [
+      {
+        "name": "@twind/typescript-plugin",
+        "tags": [
+          "tw"
+        ],
+        "attributes": [
+          "tw"
+        ]
+      }
+    ]
   },
   "include": [
     "src"

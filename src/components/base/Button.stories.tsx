@@ -1,6 +1,7 @@
 import { Button, ButtonProps } from './Button'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { tw } from 'twind'
+import { Icon } from '../icon'
 
 export default {
   title: 'Button',
@@ -20,24 +21,62 @@ Disabled.args = { primary: true, disabled: true, children: <span>Disabled</span>
 export const Loading = Template.bind({})
 Loading.args = { loading: true }
 
-const sizes = ['small', 'medium', 'large'] as const
+export const Size = () => {
+  const sizes = ['small', 'medium', 'large', null] as const
+  return (
+    <div className={tw`flex flex-col gap-2`}>
+      {sizes.map(size => (
+        <div key={size}>
+          <Button primary size={size}>
+            <span>{size || 'Size is null'}</span>
+          </Button>
+        </div>
+      ))}
+    </div>
+  )
+}
 
-export const Size = () => (
-  <>
-    {sizes.map(size => (
-      <div key={size} className={tw`my-1`}>
-        <Button primary size={size}>
-          <span>{size}</span>
+export const IconButton = () => {
+  return (
+    <div className={tw`flex gap-2`}>
+      <div>
+        <Button primary icon={<Icon.Scan />}>
+          <span>Search</span>
         </Button>
       </div>
-    ))}
-    <div className={tw`my-1`}>
-      <Button primary>
-        <span>Size is null</span>
-      </Button>
+      <div>
+        <Button primary icon={<Icon.Scan />}></Button>
+      </div>
     </div>
-  </>
-)
+  )
+}
+
+export const SuffixButton = () => {
+  return (
+    <div className={tw`flex gap-2`}>
+      <div>
+        <Button
+          primary
+          suffix={<span className={tw`text-blue-200 ml-2`}>Suffix Text</span>}
+        >
+          <span>Search</span>
+        </Button>
+      </div>
+      <div>
+        <Button
+          primary
+          suffix={
+            <span className={tw`text-blue-200 ml-2`}>
+              Suffix Icon <Icon.Check />
+            </span>
+          }
+        >
+          <span>Search</span>
+        </Button>
+      </div>
+    </div>
+  )
+}
 
 export const CustomTagName = () => (
   <Button tagName="a" primary href="https://google.com/" target="__blank">
