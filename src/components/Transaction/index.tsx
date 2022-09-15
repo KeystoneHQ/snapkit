@@ -15,7 +15,7 @@ export interface TransactionInfoProps {
 }
 
 const icons = {
-  [TransactionType.SENT]: (
+  [TransactionType.SEND]: (
     <ActionButton
       size="48px"
       borderRadius="16px"
@@ -34,17 +34,17 @@ const icons = {
 }
 
 const typeTexts = {
-  [TransactionType.SENT]: 'Sent',
+  [TransactionType.SEND]: 'Sent',
   [TransactionType.RECEIVED]: 'Received'
 }
 
 const balanceClassNames = {
-  [TransactionType.SENT]: 'sk-c-r60',
+  [TransactionType.SEND]: 'sk-c-r60',
   [TransactionType.RECEIVED]: ''
 }
 
 const addressPrefixes = {
-  [TransactionType.SENT]: 'To',
+  [TransactionType.SEND]: 'To',
   [TransactionType.RECEIVED]: 'From'
 }
 
