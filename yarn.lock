@@ -10838,6 +10838,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"npm-publish-git@git+https://github.com/andreineculau/npm-publish-git.git":
+  version: 0.0.12
+  resolution: "npm-publish-git@https://github.com/andreineculau/npm-publish-git.git#commit=306384f8fdc71fcdcba72195f212ef07608dae10"
+  bin:
+    npm-publish-git: ./npm-publish-git
+  checksum: 4ced89be06fb3246cc7d84afa7221b951cc80d0878294b71259f93fafdd6de1e695632c9aba557a81e57b84173b34377132580d318996c8f084ea2deb631e6aa
+  languageName: node
+  linkType: hard
+
 "npm-run-path@npm:^2.0.0":
   version: 2.0.2
   resolution: "npm-run-path@npm:2.0.2"
@@ -13156,6 +13165,7 @@ __metadata:
     eslint-plugin-react: ^7.28.0
     eslint-plugin-react-hooks: ^4.3.0
     eslint-plugin-storybook: ^0.6.4
+    npm-publish-git: "git+https://github.com/andreineculau/npm-publish-git.git"
     prettier: ^2.7.1
     react: ^18.2.0
     react-dom: ^18.2.0
