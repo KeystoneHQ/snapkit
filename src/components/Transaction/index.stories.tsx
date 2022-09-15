@@ -62,15 +62,30 @@ export const InList: ComponentStory<typeof TransactionInfo> = (
                 <TransactionInfo
                   {...args}
                   className={tw(css`
-                    padding: 16px;
-                    border-bottom: 1px solid var(--sk-color-ntd04);
                     border-radius: 16px;
+                    padding: 0 16px;
                     transition: var(--sk-transition);
                     &:hover {
                       background-color: var(--sk-color-ntd04);
                       transition: var(--sk-transition);
                       cursor: pointer;
                     }
+                  `)}
+                  bodyClassName={tw(css`
+                    padding: 16px 0;
+                    position: relative;
+                    ${idx === 0
+                      ? 0
+                      : css`
+                          &::after {
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 1px;
+                            top: -0.5px;
+                            background: var(--sk-color-ntd04);
+                          }
+                        `}
                   `)}
                 />
               }

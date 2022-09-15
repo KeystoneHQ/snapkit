@@ -12,6 +12,7 @@ export interface TransactionInfoProps {
   address: string
   datetime: Date
   className?: string
+  bodyClassName?: string
   onClick?: () => void
 }
 
@@ -24,11 +25,12 @@ export function TransactionInfo({
   address,
   datetime,
   onClick,
-  className
+  className,
+  bodyClassName
 }: TransactionInfoProps) {
   return (
     <div className={`transaction-info ${tw`flex`} ${className}`} onClick={onClick}>
-      <div className={tw`flex w-full`}>
+      <div className={`${tw`flex w-full`} ${bodyClassName}`}>
         <div className={`left-icon ${styles.left}`}>{icon}</div>
         <div className={`right-info ${styles.right}`}>
           <div className={tw`flex justify-between`}>
