@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { PopupProps } from 'semantic-ui-react'
-import { Popup } from '.'
+import { Popup, PopupProps } from '.'
 import { Button } from '../base/Button'
 
 const Template: ComponentStory<typeof Popup> = (args: PopupProps) => (
@@ -16,6 +15,7 @@ export default {
   component: Popup,
   args: {
     trigger: <Button>123</Button>,
-    content: 'asdf'
+    content: 'asdf',
+    inverted: true
   }
 } as ComponentMeta<typeof Popup>

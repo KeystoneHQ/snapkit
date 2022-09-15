@@ -13,5 +13,6 @@ export {
   type TransactionInfoProps
 } from './Transaction'
 export { Popup, type PopupProps } from './Popup'
+export { Switch, type SwitchProps } from './Switch'
 
 export default {}
