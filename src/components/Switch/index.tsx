@@ -25,6 +25,9 @@ export function Switch({
 }: SwitchProps) {
   const [open, setOpen] = useState(defaultValue)
   const style = tw(css`
+    :hover {
+      cursor: pointer;
+    }
     & > label {
       position: relative;
       &::before {
