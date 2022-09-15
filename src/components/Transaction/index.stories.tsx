@@ -3,8 +3,6 @@ import { faker } from '@faker-js/faker'
 import { css, tw } from 'twind/css'
 import { List } from 'semantic-ui-react'
 import BigNumber from 'bignumber.js'
-import { ActionButton } from '../balance/ActionButton'
-import { Icon } from '../icon'
 import { TransactionInfo, TransactionInfoProps, TransactionType } from '.'
 
 const Template: ComponentStory<typeof TransactionInfo> = (args: TransactionInfoProps) => (
@@ -82,7 +80,7 @@ export default {
   title: 'TransactionInfo',
   component: TransactionInfo,
   args: {
-    type: TransactionType.SENT,
+    type: TransactionType.SEND,
     balance: 1556.25,
     address: 'bcasdfasdfsadfkljwerasdfklasdf',
     datetime: new Date()

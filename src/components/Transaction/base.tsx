@@ -4,7 +4,7 @@ import { formatAddressDisplay, formatDate } from '../utils'
 import styles from './index.module.scss'
 
 export enum TransactionType {
-  SENT = 'Sent',
+  SEND = 'Send',
   RECEIVED = 'Received'
 }
 

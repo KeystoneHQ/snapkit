@@ -7,6 +7,6 @@ export { Balance } from './balance'
 export { ActionButton } from './balance/ActionButton'
 export { Tabs } from './Tabs'
 export { Tab } from './Tabs/Tab'
-export { TransactionInfo } from './Transaction'
+export { TransactionInfo, TransactionType } from './Transaction'
 
 export default {}
