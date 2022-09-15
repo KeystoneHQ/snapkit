@@ -1,14 +1,12 @@
-import { ReactElement } from 'react'
-import { tw } from 'twind'
-import { formatAddressDisplay, formatDate } from '../utils'
-import styles from './index.module.scss'
+import { BaseTransactionInfo, TransactionType } from './base'
+import { ActionButton } from '../balance/ActionButton'
+import { Icon } from '../icon'
+
+export { TransactionType } from './base'
 
 export interface TransactionInfoProps {
-  icon: ReactElement
-  typeText: string
+  type: TransactionType
   balance: number
-  balanceClassName?: string
-  addressPrefix: string
   address: string
   datetime: Date
   className?: string
@@ -16,12 +14,43 @@ export interface TransactionInfoProps {
   onClick?: () => void
 }
 
+const icons = {
+  [TransactionType.SENT]: (
+    <ActionButton
+      size="48px"
+      borderRadius="16px"
+      key={0}
+      icon={<Icon.Send className="sk-c-r60" width="24" height="24" />}
+    />
+  ),
+  [TransactionType.RECEIVED]: (
+    <ActionButton
+      size="48px"
+      borderRadius="16px"
+      key={0}
+      icon={<Icon.Receive className="sk-c-g60" width="24" height="24" />}
+    />
+  )
+}
+
+const typeTexts = {
+  [TransactionType.SENT]: 'Sent',
+  [TransactionType.RECEIVED]: 'Received'
+}
+
+const balanceClassNames = {
+  [TransactionType.SENT]: 'sk-c-r60',
+  [TransactionType.RECEIVED]: ''
+}
+
+const addressPrefixes = {
+  [TransactionType.SENT]: 'To',
+  [TransactionType.RECEIVED]: 'From'
+}
+
 export function TransactionInfo({
-  icon,
-  typeText,
+  type,
   balance,
-  balanceClassName,
-  addressPrefix,
   address,
   datetime,
   onClick,
@@ -29,25 +58,17 @@ export function TransactionInfo({
   bodyClassName
 }: TransactionInfoProps) {
   return (
-    <div className={`transaction-info ${tw`flex`} ${className}`} onClick={onClick}>
-      <div className={`${tw`flex w-full`} ${bodyClassName}`}>
-        <div className={`left-icon ${styles.left}`}>{icon}</div>
-        <div className={`right-info ${styles.right}`}>
-          <div className={tw`flex justify-between`}>
-            <span className="sk-t-body">{typeText}</span>
-            <span className={`sk-t-h3 sk-c-n80 ${balanceClassName}`}>{balance}</span>
-          </div>
-          <div className={`sk-flex sk-justify-between ${styles.rightBottom}`}>
-            <div>
-              <span className="sk-t-caption sk-c-n50">{addressPrefix}: </span>
-              <span className="sk-t-caption sk-c-n60">
-                {formatAddressDisplay(address)}
-              </span>
-            </div>
-            <span className="sk-t-caption sk-c-n50">{formatDate(datetime)}</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <BaseTransactionInfo
+      icon={icons[type]}
+      addressPrefix={addressPrefixes[type]}
+      balance={balance}
+      typeText={typeTexts[type]}
+      bodyClassName={bodyClassName}
+      className={className}
+      balanceClassName={balanceClassNames[type]}
+      address={address}
+      datetime={datetime}
+      onClick={onClick}
+    />
   )
 }

@@ -4,11 +4,11 @@
 
 ### Install from Github Tag
 
-``` bash
-yarn add git+ssh://git@github.com:KeystoneHQ/snapkit#[tagName]
+```bash
+yarn add snapkit@git+ssh://git@github.com:KeystoneHQ/snapkit#[tagName]
 
 example:
-yarn add git+ssh://git@github.com:KeystoneHQ/snapkit#v0.1.2
+yarn add snapkit@git+ssh://git@github.com:KeystoneHQ/snapkit#v0.1.5
 ```
 
 ### Import CSS
@@ -20,7 +20,7 @@ import 'snapkit/dist/style.css'
 ### Import Component
 
 ```js
-import { Tabs, Tab } from 'snapkit
+import { Tabs, Tab } from 'snapkit'
 ```
 
 ### Document
@@ -31,7 +31,7 @@ There is no document open to the public, you need to use storybook to build it y
 
 ### Install a local package manager
 
-``` bash
+```bash
 npm i yalc -g
 ```
 
@@ -39,14 +39,15 @@ npm i yalc -g
 
 Execute in the snapkit directory:
 
-``` bash
+```bash
 npm run publish:local
 ```
 
 ### Add dependency to the project
 
 Execute in the project directory:
-``` bash
+
+```bash
 yalc add snapkit --link
 ```
 

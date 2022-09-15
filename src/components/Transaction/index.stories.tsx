@@ -3,9 +3,9 @@ import { faker } from '@faker-js/faker'
 import { css, tw } from 'twind/css'
 import { List } from 'semantic-ui-react'
 import BigNumber from 'bignumber.js'
-import { TransactionInfo, TransactionInfoProps } from '.'
 import { ActionButton } from '../balance/ActionButton'
 import { Icon } from '../icon'
+import { TransactionInfo, TransactionInfoProps, TransactionType } from '.'
 
 const Template: ComponentStory<typeof TransactionInfo> = (args: TransactionInfoProps) => (
   <>
@@ -13,25 +13,10 @@ const Template: ComponentStory<typeof TransactionInfo> = (args: TransactionInfoP
   </>
 )
 
-export const Example = Template
+export const Sent = Template.bind({})
 
-const icons = [
-  <ActionButton
-    size="48px"
-    borderRadius="16px"
-    key={0}
-    icon={<Icon.Send className="sk-c-r60" width="24" height="24" />}
-  />,
-  <ActionButton
-    size="48px"
-    borderRadius="16px"
-    key={0}
-    icon={<Icon.Receive className="sk-c-g60" width="24" height="24" />}
-  />
-]
-const types = ['Sent', 'Receive']
-const classNames = ['sk-c-r60', '']
-const prefixes = ['To', 'From']
+export const Receive = Template.bind({})
+Receive.args = { type: TransactionType.RECEIVED }
 
 export const InList: ComponentStory<typeof TransactionInfo> = (
   args: TransactionInfoProps
@@ -46,11 +31,8 @@ export const InList: ComponentStory<typeof TransactionInfo> = (
             min: 0
           })
           return {
-            icon: icons[type],
-            typeText: types[type],
+            type: Object.values(TransactionType)[type],
             balance: BigNumber(faker.finance.amount()).toNumber(),
-            balanceClassName: classNames[type],
-            addressPrefix: prefixes[type],
             address: faker.datatype.hexadecimal({ length: 26 }),
             datetime: faker.datatype.datetime()
           }
@@ -100,17 +82,8 @@ export default {
   title: 'TransactionInfo',
   component: TransactionInfo,
   args: {
-    icon: (
-      <ActionButton
-        size="48px"
-        borderRadius="16px"
-        icon={<Icon.Send className="sk-c-r60" width="24" height="24" />}
-      />
-    ),
-    typeText: 'Sent',
+    type: TransactionType.SENT,
     balance: 1556.25,
-    balanceClassName: 'sk-c-r60',
-    addressPrefix: 'To',
     address: 'bcasdfasdfsadfkljwerasdfklasdf',
     datetime: new Date()
   }
