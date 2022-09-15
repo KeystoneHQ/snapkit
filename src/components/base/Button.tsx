@@ -10,7 +10,7 @@ export interface ButtonProps {
   tagName?: string
   className?: string
   loading?: boolean
-  children?: JSX.Element | JSX.Element[]
+  children?: string | JSX.Element | JSX.Element[]
   icon?: ReactNode
   suffix?: ReactNode
   [propName: string]: unknown

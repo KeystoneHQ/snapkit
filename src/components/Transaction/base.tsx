@@ -34,7 +34,7 @@ export function BaseTransactionInfo({
   bodyClassName
 }: BaseTransactionInfoProps) {
   return (
-    <div className={`transaction-info ${tw`flex`} ${className}`} onClick={onClick}>
+    <div className={`transaction-info ${tw`flex w-full`} ${className}`} onClick={onClick}>
       <div className={`${tw`flex w-full`} ${bodyClassName}`}>
         <div className={`left-icon ${styles.left}`}>{icon}</div>
         <div className={`right-info ${styles.right}`}>
