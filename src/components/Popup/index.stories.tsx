@@ -8,7 +8,10 @@ const Template: ComponentStory<typeof Popup> = (args: PopupProps) => (
   </>
 )
 
-export const Example = Template
+export const Example = Template.bind({})
+
+export const Inverted = Template.bind({})
+Inverted.args = { inverted: true }
 
 export default {
   title: 'Popup',
@@ -16,6 +19,6 @@ export default {
   args: {
     trigger: <Button>123</Button>,
     content: 'asdf',
-    inverted: true
+    inverted: false
   }
 } as ComponentMeta<typeof Popup>
