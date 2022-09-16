@@ -4,10 +4,13 @@ import { Switch, SwitchProps } from '.'
 
 const Template: ComponentStory<typeof Switch> = (args: SwitchProps) => {
   const [open, setOpen] = useState(args.defaultValue)
+  function onChangeOpen(isOpen: boolean) {
+    setOpen(isOpen)
+    console.log('%c 🍌 isOpen', 'color:#6ec1c2', isOpen)
+  }
   return (
     <>
-      open: {JSON.stringify(open)}
-      <Switch {...args} onChange={bool => setOpen(bool)}></Switch>
+      <Switch {...args} onChange={onChangeOpen}></Switch>
     </>
   )
 }

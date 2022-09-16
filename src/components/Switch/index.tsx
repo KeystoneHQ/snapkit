@@ -56,7 +56,6 @@ export function Switch({
 
   function onChangeSwitch() {
     const setValue = !open
-    console.log('%c 🍣 setValue', 'color:#93c0a4', setValue)
     setOpen(setValue)
     onChange?.(setValue)
   }
