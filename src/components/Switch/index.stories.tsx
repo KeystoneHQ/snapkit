@@ -15,12 +15,16 @@ const Template: ComponentStory<typeof Switch> = (args: SwitchProps) => {
   )
 }
 
-export const Example = Template
+export const Example = Template.bind({})
+
+export const SetColor = Template.bind({})
+SetColor.args = { color: 'blue' }
 
 export default {
   title: 'Switch',
   component: Switch,
   args: {
-    defaultValue: true
+    defaultValue: true,
+    color: ''
   }
 } as ComponentMeta<typeof Switch>

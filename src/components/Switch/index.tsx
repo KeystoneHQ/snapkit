@@ -7,6 +7,7 @@ export interface SwitchProps {
   className?: string
   size?: 'default'
   onChange?: (value: boolean) => void
+  color?: string
 }
 
 const switchBoxsizeMaps = {
@@ -17,14 +18,13 @@ const switchCircleSizeMaps = {
   default: 10
 }
 
-export function Switch({
-  defaultValue = false,
-  size = 'default',
-  className,
-  onChange
-}: SwitchProps) {
-  const [open, setOpen] = useState(defaultValue)
-  const style = tw(css`
+const style = (config: {
+  backgroundColor: string
+  width: number
+  open: boolean
+  circleWidth: number
+}) =>
+  tw(css`
     :hover {
       cursor: pointer;
     }
@@ -33,20 +33,20 @@ export function Switch({
       &::before {
         content: '';
         display: block;
-        width: ${switchBoxsizeMaps[size]}px;
+        width: ${config.width}px;
         height: 20px;
         border-radius: 20px;
-        background-color: var(--sk-color-${open ? 'pri60' : 'n30'});
+        background-color: ${config.backgroundColor};
         transition: var(--sk-transition);
       }
       &::after {
         content: '';
         position: absolute;
-        left: ${open ? 18 : 5}px;
+        left: ${config.open ? 18 : 5}px;
         top: 5px;
         display: block;
-        width: ${switchCircleSizeMaps[size]}px;
-        height: ${switchCircleSizeMaps[size]}px;
+        width: ${config.circleWidth}px;
+        height: ${config.circleWidth}px;
         border-radius: 50%;
         background-color: white;
         transition: var(--sk-transition);
@@ -54,14 +54,31 @@ export function Switch({
     }
   `)
 
+export function Switch({
+  defaultValue = false,
+  size = 'default',
+  className,
+  color,
+  onChange
+}: SwitchProps) {
+  const [open, setOpen] = useState(defaultValue)
+  const backgroundColor = color ? color : `var(--sk-color-${open ? 'pri60' : 'n30'})`
+
   function onChangeSwitch() {
     const setValue = !open
     setOpen(setValue)
     onChange?.(setValue)
   }
 
+  const SetStyle = style({
+    width: switchBoxsizeMaps[size],
+    backgroundColor: open ? backgroundColor : `var(--sk-color-n30)`,
+    open,
+    circleWidth: switchCircleSizeMaps[size]
+  })
+
   return (
-    <div className={'switch ' + style + ` ${className}`} onClick={onChangeSwitch}>
+    <div className={'switch ' + SetStyle + ` ${className}`} onClick={onChangeSwitch}>
       <input type="checkbox" checked={open} className={tw`hidden`}></input>
       <label></label>
     </div>

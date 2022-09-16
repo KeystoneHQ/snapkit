@@ -6,31 +6,36 @@ export { TransactionType } from './base'
 
 export interface TransactionInfoProps {
   type: TransactionType
-  balance: number
+  amount: number
   address: string
   datetime: Date
   className?: string
   bodyClassName?: string
+  loading?: boolean
   onClick?: () => void
 }
 
-const icons = {
-  [TransactionType.SEND]: (
-    <ActionButton
-      size="48px"
-      borderRadius="16px"
-      key={0}
-      icon={<Icon.Send className="sk-c-r60" width="24" height="24" />}
-    />
-  ),
-  [TransactionType.RECEIVED]: (
-    <ActionButton
-      size="48px"
-      borderRadius="16px"
-      key={0}
-      icon={<Icon.Receive className="sk-c-g60" width="24" height="24" />}
-    />
-  )
+const icons = (props: { loading: boolean }) => {
+  return {
+    [TransactionType.SEND]: (
+      <ActionButton
+        size="48px"
+        borderRadius="16px"
+        key={0}
+        loading={props.loading}
+        icon={<Icon.Send className="sk-c-r60" width="24" height="24" />}
+      />
+    ),
+    [TransactionType.RECEIVED]: (
+      <ActionButton
+        size="48px"
+        borderRadius="16px"
+        key={0}
+        loading={props.loading}
+        icon={<Icon.Receive className="sk-c-g60" width="24" height="24" />}
+      />
+    )
+  }
 }
 
 const typeTexts = {
@@ -38,7 +43,7 @@ const typeTexts = {
   [TransactionType.RECEIVED]: 'Received'
 }
 
-const balanceClassNames = {
+const amountClassNames = {
   [TransactionType.SEND]: 'sk-c-r60',
   [TransactionType.RECEIVED]: ''
 }
@@ -50,22 +55,23 @@ const addressPrefixes = {
 
 export function TransactionInfo({
   type,
-  balance,
+  amount,
   address,
   datetime,
   onClick,
   className,
-  bodyClassName
+  bodyClassName,
+  loading
 }: TransactionInfoProps) {
   return (
     <BaseTransactionInfo
-      icon={icons[type]}
+      icon={icons({ loading: !!loading })[type]}
       addressPrefix={addressPrefixes[type]}
-      balance={balance}
+      amount={amount}
       typeText={typeTexts[type]}
       bodyClassName={bodyClassName}
       className={className}
-      balanceClassName={balanceClassNames[type]}
+      amountClassName={amountClassNames[type]}
       address={address}
       datetime={datetime}
       onClick={onClick}

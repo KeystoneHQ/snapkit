@@ -11,8 +11,8 @@ export enum TransactionType {
 export interface BaseTransactionInfoProps {
   icon: ReactElement
   typeText: string
-  balance: number
-  balanceClassName?: string
+  amount: number
+  amountClassName?: string
   addressPrefix: string
   address: string
   datetime: Date
@@ -24,8 +24,8 @@ export interface BaseTransactionInfoProps {
 export function BaseTransactionInfo({
   icon,
   typeText,
-  balance,
-  balanceClassName,
+  amount,
+  amountClassName,
   addressPrefix,
   address,
   datetime,
@@ -34,13 +34,16 @@ export function BaseTransactionInfo({
   bodyClassName
 }: BaseTransactionInfoProps) {
   return (
-    <div className={`transaction-info ${tw`flex w-full`} ${className}`} onClick={onClick}>
-      <div className={`${tw`flex w-full`} ${bodyClassName}`}>
+    <div
+      className={`transaction-info ${tw`flex w-full`} ${styles.container} ${className}`}
+      onClick={onClick}
+    >
+      <div className={`${tw`flex w-full`} ${styles.body} ${bodyClassName}`}>
         <div className={`left-icon ${styles.left}`}>{icon}</div>
         <div className={`right-info ${styles.right}`}>
           <div className={tw`flex justify-between`}>
             <span className="sk-t-body">{typeText}</span>
-            <span className={`sk-t-h3 sk-c-n80 ${balanceClassName}`}>{balance}</span>
+            <span className={`sk-t-h3 sk-c-n80 ${amountClassName}`}>{amount}</span>
           </div>
           <div className={`sk-flex sk-justify-between ${styles.rightBottom}`}>
             <div>

@@ -30,7 +30,7 @@ export const InList: ComponentStory<typeof TransactionInfo> = (
           })
           return {
             type: Object.values(TransactionType)[type],
-            balance: BigNumber(faker.finance.amount()).toNumber(),
+            amount: BigNumber(faker.finance.amount()).toNumber(),
             address: faker.datatype.hexadecimal({ length: 26 }),
             datetime: faker.datatype.datetime()
           }
@@ -42,17 +42,14 @@ export const InList: ComponentStory<typeof TransactionInfo> = (
                 <TransactionInfo
                   {...args}
                   className={tw(css`
-                    border-radius: 16px;
-                    padding: 0 16px;
+                    cursor: pointer;
                     transition: var(--sk-transition);
                     &:hover {
                       background-color: var(--sk-color-ntd04);
                       transition: var(--sk-transition);
-                      cursor: pointer;
                     }
                   `)}
                   bodyClassName={tw(css`
-                    padding: 16px 0;
                     position: relative;
                     ${idx === 0
                       ? 0
@@ -81,8 +78,9 @@ export default {
   component: TransactionInfo,
   args: {
     type: TransactionType.SEND,
-    balance: 1556.25,
+    amount: 1556.25,
     address: 'bcasdfasdfsadfkljwerasdfklasdf',
-    datetime: new Date()
+    datetime: new Date(),
+    loading: false
   }
 } as ComponentMeta<typeof TransactionInfo>
