@@ -1,0 +1,23 @@
+@each $k in huge, large, big, meidum, head, body, caption, subcaption {
+  .sk-t-#{$k} {
+    font-family: 'Open Sans';
+    font-size: var(--sk-font-size-#{$k});
+    line-height: var(--sk-line-height-#{$k});
+    font-weight: 400;
+  }
+}
+
+@for $i from 1 through 5 {
+  .sk-t-h#{$i} {
+    font-family: 'Open Sans';
+    font-size: var(--sk-font-size-h#{$i});
+    line-height: var(--sk-line-height-h#{$i});
+    font-weight: 600;
+  }
+}
+
+@each $k in center, left, right, justify, start, end {
+  .sk-t-#{$k} {
+    text-align: #{$k};
+  }
+}

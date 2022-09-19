@@ -1,0 +1,70 @@
+.connect {
+  margin: 0 16px;
+}
+
+.logos {
+  padding: 40px 0 24px;
+}
+
+.logo {
+  width: 88px;
+  height: 88px;
+  border-radius: 44px;
+  box-sizing: border-box;
+  border: 1px solid var(--sk-color-ntd10);
+}
+
+.help {
+  padding: 16px 0;
+}
+
+.btn {
+  margin-top: 64px;
+
+  &-address {
+    margin-top: 98px;
+  }
+}
+
+$speed: 0.25s;
+
+.dot-pulse {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 32px;
+  height: 32px;
+}
+
+.dot-pulse__dot,
+.dot-pulse::before,
+.dot-pulse::after {
+  content: '';
+  display: block;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: var(--sk-color-ntd20);
+}
+
+.dot-pulse::before {
+  animation: pulse $speed * 3 ease-in-out infinite;
+}
+
+.dot-pulse__dot {
+  animation: pulse $speed * 3 ease-in-out $speed infinite;
+}
+
+.dot-pulse::after {
+  animation: pulse $speed * 3 ease-in-out $speed * 2 infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background: var(--sk-color-g60);
+  }
+  100% {
+    background: var(--sk-color-ntd20);
+  }
+}
