@@ -1,0 +1,13 @@
+.modal {
+  :global(.sk-content) {
+    background: var(--sk-color-pgd) !important;
+  }
+
+  :global(.sk-box) {
+    padding: 40px;
+  }
+
+  &.browser {
+    width: 552px !important;
+  }
+}
