@@ -18,7 +18,7 @@
     "build:ts": "tsc --build tsconfig.build.json",
     "build:component": "vite build",
     "build:storybook": "build-storybook",
-    "postversion": "npm run build && publish-to-git",
+    "publish:git": "npm run build && publish-to-git",
     "publish:local": "npm run build && yalc push --private",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
