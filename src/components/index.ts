@@ -14,5 +14,6 @@ export {
 } from './Transaction'
 export { Popup, type PopupProps } from './Popup'
 export { Switch, type SwitchProps } from './Switch'
+export { Browsers } from './Browsers/Browser'
 
 export default {}
