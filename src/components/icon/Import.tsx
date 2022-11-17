@@ -1,11 +1,6 @@
 import { IconProps } from './types'
 
-export function Import({
-  className,
-  width = '24',
-  height = '24',
-  color = 'black'
-}: IconProps) {
+export function Import({ className, width = '24', height = '24' }: IconProps) {
   return (
     <svg
       width={width}
@@ -15,7 +10,7 @@ export function Import({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M17 17V9H19V17H27V19H19V27H17V19H9V17H17Z" fill={color} />
+      <path d="M17 17V9H19V17H27V19H19V27H17V19H9V17H17Z" fill="currentColor" />
     </svg>
   )
 }

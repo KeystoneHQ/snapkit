@@ -1,11 +1,6 @@
 import { IconProps } from './types'
 
-export function Back({
-  className,
-  width = '24',
-  height = '24',
-  color = 'black'
-}: IconProps) {
+export function Back({ className, width = '24', height = '24' }: IconProps) {
   return (
     <svg
       width={width}
@@ -16,7 +11,7 @@ export function Back({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M12 5L5 12M5 12L12 19M5 12H20" stroke={color} strokeWidth="1.5" />
+      <path d="M12 5L5 12M5 12L12 19M5 12H20" stroke="currentColor" strokeWidth="1.5" />
     </svg>
   )
 }

@@ -1,11 +1,6 @@
 import { IconProps } from './types'
 
-export function ArrowRight({
-  className,
-  width = '24',
-  height = '24',
-  color = 'black'
-}: IconProps) {
+export function ArrowRight({ className, width = '24', height = '24' }: IconProps) {
   return (
     <svg
       width={width}
@@ -17,7 +12,7 @@ export function ArrowRight({
     >
       <path
         d="M17.1722 12.0007L12.2222 7.05072L13.6362 5.63672L20.0002 12.0007L13.6362 18.3647L12.2222 16.9507L17.1722 12.0007Z"
-        fill={color}
+        fill="currentColor"
       />
     </svg>
   )

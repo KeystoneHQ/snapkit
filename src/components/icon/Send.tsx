@@ -1,11 +1,6 @@
 import { IconProps } from './types'
 
-export function Send({
-  className,
-  width = '48',
-  height = '48',
-  color = 'black'
-}: IconProps) {
+export function Send({ className, width = '48', height = '48' }: IconProps) {
   return (
     <svg
       width={width}
@@ -19,7 +14,7 @@ export function Send({
         fillRule="evenodd"
         clipRule="evenodd"
         d="M32 13L13 13L12.9997 16L21.4392 24.4395L9.93933 35.9393L12.0607 38.0607L23.5605 26.5608L31.9997 35H32H35V32V16V13H32ZM17.2424 16L32 30.7576V16L17.2424 16Z"
-        fill={color}
+        fill="currentColor"
       />
     </svg>
   )

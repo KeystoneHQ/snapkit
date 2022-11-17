@@ -12,7 +12,7 @@ export function Receive({
       height={height}
       className={className}
       viewBox="0 0 48 48"
-      fill={color}
+      fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
