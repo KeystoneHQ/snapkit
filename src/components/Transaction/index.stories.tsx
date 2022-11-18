@@ -3,7 +3,8 @@ import { faker } from '@faker-js/faker'
 import { css, tw } from 'twind/css'
 import { List } from 'semantic-ui-react'
 import BigNumber from 'bignumber.js'
-import { TransactionInfo, TransactionInfoProps, TransactionType } from '.'
+import { TransactionInfo, TransactionInfoProps } from '.'
+import { Icon } from '../icon'
 
 const Template: ComponentStory<typeof TransactionInfo> = (args: TransactionInfoProps) => (
   <>
@@ -12,9 +13,28 @@ const Template: ComponentStory<typeof TransactionInfo> = (args: TransactionInfoP
 )
 
 export const Sent = Template.bind({})
+Sent.args = {
+  icon: <Icon.Send color="var(--sk-color-y50)" />
+}
 
 export const Receive = Template.bind({})
-Receive.args = { type: TransactionType.RECEIVED }
+Receive.args = { icon: <Icon.Receive color="var(--sk-color-g60)" /> }
+
+export const Expired = Template.bind({})
+Expired.args = {
+  icon: <Icon.Expired color="var(--sk-color-n50)" />,
+  title: <span style={{ color: 'var(--sk-color-n50)' }}>Expired</span>,
+  content: 'This is the description',
+  amount: <span style={{ color: 'var(--sk-color-n50)' }}>+123</span>
+}
+
+export const OnChain = Template.bind({})
+OnChain.args = {
+  icon: <Icon.OnChain color="var(--sk-color-b60)" />,
+  title: 'On-Chain Transaction',
+  content: 'This is the description',
+  amount: <span style={{ color: 'var(--sk-color-n50)' }}>+123</span>
+}
 
 export const InList: ComponentStory<typeof TransactionInfo> = (
   args: TransactionInfoProps
@@ -24,15 +44,19 @@ export const InList: ComponentStory<typeof TransactionInfo> = (
       {Array.from({ length: 10 })
         .fill(0)
         .map((_it, idx) => {
-          const type = faker.datatype.number({
-            max: 1,
-            min: 0
-          })
           return {
-            type: Object.values(TransactionType)[type],
+            icon: faker.helpers.arrayElement([
+              <Icon.Send key="1" color="var(--sk-color-y50)" />,
+              <Icon.Receive key="2" color="var(--sk-color-g60)" />,
+              <Icon.BackCard key="3" color="var(--sk-color-b60)" />,
+              <Icon.OnChain key="3" color="var(--sk-color-b60)" />
+            ]),
+            title: <span>asdfafds</span>,
+            label: 'asdf: ',
+            content: 'asdfasdfasdf',
             amount: BigNumber(faker.finance.amount()).toNumber(),
             address: faker.datatype.hexadecimal({ length: 26 }),
-            datetime: faker.datatype.datetime()
+            datetime: faker.datatype.datetime().toString()
           }
         })
         .map((args, idx) => {
@@ -77,10 +101,20 @@ export default {
   title: 'TransactionInfo',
   component: TransactionInfo,
   args: {
-    type: TransactionType.SEND,
+    title: 'Sent',
+    icon: <Icon.Aptos />,
+    label: '1156561',
+    content: 'laladfsladfslfsadkfdsaklafsdladfs',
     amount: 1556.25,
+    iconLoading: false,
     address: 'bcasdfasdfsadfkljwerasdfklasdf',
-    datetime: new Date(),
-    loading: false
+    datetime: Intl.DateTimeFormat('fr-CA', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    }).format(Date.now())
   }
 } as ComponentMeta<typeof TransactionInfo>

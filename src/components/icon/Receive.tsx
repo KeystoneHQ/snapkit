@@ -4,13 +4,18 @@ export function Receive({
   className,
   width = '48',
   height = '48',
-  color = 'currentColor'
+  color,
+  style
 }: IconProps) {
   return (
     <svg
       width={width}
       height={height}
       className={className}
+      style={{
+        color,
+        ...(style && { style })
+      }}
       viewBox="0 0 48 48"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"

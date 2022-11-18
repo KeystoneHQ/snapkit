@@ -1,11 +1,21 @@
 import { IconProps } from './types'
 
-export function Send({ className, width = '48', height = '48' }: IconProps) {
+export function Send({
+  className,
+  width = '48',
+  height = '48',
+  style,
+  color
+}: IconProps) {
   return (
     <svg
       width={width}
       height={height}
       className={className}
+      style={{
+        color,
+        ...(style && { style })
+      }}
       viewBox="0 0 48 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -29,18 +29,28 @@ import { Refresh } from './Refresh'
 import { Discord } from './Discord'
 import React, { Attributes, ComponentProps } from 'react'
 import { Pending } from './Pending'
+import { Expired } from './expired'
+import { OnChain } from './Onchain'
+import { BackCard } from './BackCard'
 
-export function Icon () {
+export function Icon() {
   return <></>
 }
 
-function format <T extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>>(component: T) {
-  return function Icon (props: ComponentProps<typeof component>) {
+function format<T extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>>(
+  component: T
+) {
+  return function Icon(props: ComponentProps<typeof component>) {
     return (
-      <span style={{
-        display: 'inline-flex',
-        alignItems: 'center'
-      }}>{'\u200b'}{React.createElement(component, props as Attributes)}</span>
+      <span
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center'
+        }}
+      >
+        {'\u200b'}
+        {React.createElement(component, props as Attributes)}
+      </span>
     )
   }
 }
@@ -76,3 +86,6 @@ Icon.Back = format(Back)
 Icon.Scan = format(Scan)
 Icon.Refresh = format(Refresh)
 Icon.Pending = format(Pending)
+Icon.Expired = format(Expired)
+Icon.BackCard = format(BackCard)
+Icon.OnChain = format(OnChain)

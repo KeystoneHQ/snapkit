@@ -1,12 +1,22 @@
 import { IconProps } from './types'
 
-export function Swap({ className, width = '24', height = '24' }: IconProps) {
+export function Swap({
+  className,
+  width = '24',
+  height = '24',
+  color,
+  style
+}: IconProps) {
   return (
     <svg
       width={width}
       height={height}
       className={className}
       viewBox="0 0 48 48"
+      style={{
+        color,
+        ...(style && { style })
+      }}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

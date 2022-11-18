@@ -1,12 +1,21 @@
 import { IconProps } from './types'
 
-export function Back({ className, width = '24', height = '24' }: IconProps) {
+export function Back({
+  className,
+  width = '24',
+  height = '24',
+  style,
+  color
+}: IconProps) {
   return (
     <svg
       width={width}
       height={height}
       className={className}
-      style={{ stroke: 'currentColor' }}
+      style={{
+        color,
+        ...(style && { style })
+      }}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
