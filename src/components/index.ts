@@ -7,12 +7,9 @@ export { Balance, type BalanceProps } from './balance'
 export { ActionButton, type ActionButtonProps } from './balance/ActionButton'
 export { Tabs, type TabsProps } from './Tabs'
 export { Tab, type TabProps } from './Tabs/Tab'
-export {
-  TransactionInfo,
-  TransactionType,
-  type TransactionInfoProps
-} from './Transaction'
+export { TransactionInfo, type TransactionInfoProps } from './Transaction'
 export { Popup, type PopupProps } from './Popup'
 export { Switch, type SwitchProps } from './Switch'
+export { Browsers } from './Browsers/Browser'
 
 export default {}

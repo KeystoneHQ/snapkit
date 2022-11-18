@@ -1,8 +1,9 @@
+import { ReactNode } from 'react'
 import { Icon } from '../icon'
 import styles from './ActionButton.module.scss'
 
 export interface ActionButtonProps {
-  icon: JSX.Element
+  icon: ReactNode
   size?: string
   borderRadius?: string
   onClick?: () => void

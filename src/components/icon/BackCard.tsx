@@ -1,10 +1,10 @@
 import { IconProps } from './types'
 
-export function ArrowRight({
+export function BackCard({
   className,
+  color,
   width = '24',
   height = '24',
-  color,
   style
 }: IconProps) {
   return (
@@ -21,7 +21,9 @@ export function ArrowRight({
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M17.1722 12.0007L12.2222 7.05072L13.6362 5.63672L20.0002 12.0007L13.6362 18.3647L12.2222 16.9507L17.1722 12.0007Z"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M5.5 17.5V11.5H18.5V17.5H5.5ZM5.5 10H18.5V7.5H5.5V10ZM20 6H18.5H5.5H4V7.5V17.5V19H5.5H18.5H20V17.5V7.5V6ZM14 16V15.5V14.5V14H15.5H17V14.5V15.5V16H15.5H14Z"
         fill="currentColor"
       />
     </svg>
