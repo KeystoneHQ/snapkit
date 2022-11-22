@@ -50,7 +50,7 @@
 
   &:disabled,
   &.disabled {
-    cursor: default;
+    cursor: not-allowed;
   }
 
   &.large {
