@@ -8,9 +8,12 @@ export default {
   component: Button
 } as ComponentMeta<typeof Button>
 
-const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
-  <Button size="large" {...args}></Button>
-)
+const Template: ComponentStory<typeof Button> = (args: ButtonProps) => {
+  function trigger() {
+    alert('trigger')
+  }
+  return <Button size="large" onClick={trigger} {...args}></Button>
+}
 
 export const Primary = Template.bind({})
 Primary.args = { primary: true, children: <span>Primary</span> }
@@ -35,6 +38,9 @@ export const Size = () => {
     </div>
   )
 }
+
+export const CustomLoadingIconButton = Loading.bind({})
+CustomLoadingIconButton.args = { loading: true, loadingIcon: <Icon.Brave /> }
 
 export const IconButton = () => {
   return (

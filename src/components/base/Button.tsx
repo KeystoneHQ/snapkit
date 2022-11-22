@@ -10,9 +10,11 @@ export interface ButtonProps {
   tagName?: string
   className?: string
   loading?: boolean
+  loadingIcon?: ReactNode
   children?: string | JSX.Element | JSX.Element[]
   icon?: ReactNode
   suffix?: ReactNode
+  onClick?: () => void
   [propName: string]: unknown
 }
 
@@ -23,9 +25,11 @@ export function Button({
   tagName,
   className,
   loading,
+  loadingIcon,
   children,
   icon,
   suffix,
+  onClick,
   ...args
 }: ButtonProps) {
   const sizeStyles = {
@@ -43,10 +47,14 @@ export function Button({
     {
       className: style,
       disabled: disabled,
+      onClick: () => {
+        if (loading) return
+        onClick && onClick()
+      },
       ...args
     },
     loading ? (
-      <Loading></Loading>
+      loadingIcon || <Loading></Loading>
     ) : (
       <div
         className={tw(css`
