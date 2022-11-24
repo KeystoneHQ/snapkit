@@ -1,17 +1,27 @@
 import { IconProps } from './types'
 
-export function Wallet({ className, width = '24', height = '24' }: IconProps) {
+export function Wallet({
+  className,
+  width = '24',
+  height = '24',
+  color,
+  style
+}: IconProps) {
   return (
     <svg
       width={width}
       height={height}
       className={className}
-      viewBox="0 0 36 36"
+      style={{
+        color,
+        ...(style && { style })
+      }}
+      viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M24 13H28C28 13 28 24.7578 28 27C21.6667 27 14.3333 27 8 27C8 21.3333 8 14.6667 8 9C13.3333 9 18.6667 9 24 9V13ZM10 15V25H26V15H10ZM10 11V13H22V11H10ZM21 19H24V21H21V19Z"
+        d="M16.5001 8.25C17.5001 8.25 18.5001 8.25 19.5001 8.25C19.5001 11.75 19.5001 15.25 19.5001 18.75C14.5001 18.75 9.50005 18.75 4.50002 18.75C4.50002 18.75 4.50002 7.46835 4.5 5.25H16.5001V8.25ZM6.00012 9.75V17.25H18.0001V9.75H6.00012ZM6.00012 6.75V8.25H15.0001V6.75H6.00012ZM14.2501 12.75H16.5001V14.25H14.2501V12.75Z"
         fill="currentColor"
       />
     </svg>

@@ -29,9 +29,11 @@ import { Refresh } from './Refresh'
 import { Discord } from './Discord'
 import React, { Attributes, ComponentProps } from 'react'
 import { Pending } from './Pending'
-import { Expired } from './expired'
-import { OnChain } from './Onchain'
+import { Expired } from './Expired'
+import { OnChain } from './OnChain'
 import { BackCard } from './BackCard'
+import { WalletEx } from './WalletEx'
+import { TopUp } from './TopUp'
 
 export function Icon() {
   return <></>
@@ -89,3 +91,5 @@ Icon.Pending = format(Pending)
 Icon.Expired = format(Expired)
 Icon.BackCard = format(BackCard)
 Icon.OnChain = format(OnChain)
+Icon.WalletEx = format(WalletEx)
+Icon.TopUp = format(TopUp)
