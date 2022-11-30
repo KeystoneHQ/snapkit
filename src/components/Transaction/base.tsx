@@ -19,15 +19,15 @@ export interface BaseTransactionInfoProps {
 
 
 const skeletonTitle = tw(skeletonCommon, tw`
-  mt-[5px]
-  w-1/4 h-[12px]
+  mt-[5px] w-1/4 h-[12px]
+`, css`
+  animation-duration: 7s;
 `)
 
 const skeletonDesc = tw(skeletonCommon, tw`
-  mt-[10px]
-  w-1/4 h-[12px]
+  mt-[10px] w-1/4 h-[12px]
 `, css`
-  animation-duration: 2s;
+  animation-duration: 1.6s;
 `)
 
 export function BaseTransactionInfo({

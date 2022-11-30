@@ -2,7 +2,6 @@ import { BaseTransactionInfo } from './base'
 import { ActionButton } from '../balance/ActionButton'
 import {
   cloneElement,
-  FunctionComponent,
   FunctionComponentElement,
   ReactNode
 } from 'react'
@@ -15,21 +14,19 @@ export interface TransactionInfoProps {
   amount: ReactNode
   label?: string
   content?: string
-  loading?: boolean
   datetime: string
   className?: string
   bodyClassName?: string
   onClick?: () => void
 }
 
-export function TransactionInfo({
+function TransactionInfo({
   icon,
   iconLoading = false,
   title,
   label,
   content,
   amount,
-  loading = false,
   datetime,
   onClick,
   className,
@@ -42,14 +39,13 @@ export function TransactionInfo({
           size="48px"
           borderRadius="16px"
           loading={iconLoading}
-          icon={!loading ? cloneElement(icon, {
+          icon={cloneElement(icon, {
             width: '24',
             height: '24'
-          }) : undefined}
+          })}
         />
       }
       title={title}
-      loading={loading}
       label={label}
       content={content}
       amount={amount}
@@ -59,4 +55,27 @@ export function TransactionInfo({
       onClick={onClick}
     />
   )
+}
+
+function TransactionInfoSkeleton() {
+  return (
+    <BaseTransactionInfo
+      icon={
+        <ActionButton
+          size="48px"
+          borderRadius="16px"
+          icon={undefined}
+        />
+      }
+      title=''
+      loading
+      amount={0}
+    />
+  )
+}
+
+TransactionInfo.Skeleton = TransactionInfoSkeleton
+
+export {
+  TransactionInfo
 }
