@@ -28,6 +28,11 @@ Expired.args = {
   amount: <span style={{ color: 'var(--sk-color-n50)' }}>+123</span>
 }
 
+export const Loading = Template.bind({})
+Loading.args = {
+  loading: true,
+}
+
 export const OnChain = Template.bind({})
 OnChain.args = {
   icon: <Icon.OnChain color="var(--sk-color-b60)" />,

@@ -15,6 +15,7 @@ export interface TransactionInfoProps {
   amount: ReactNode
   label?: string
   content?: string
+  loading?: boolean
   datetime: string
   className?: string
   bodyClassName?: string
@@ -28,6 +29,7 @@ export function TransactionInfo({
   label,
   content,
   amount,
+  loading = false,
   datetime,
   onClick,
   className,
@@ -40,13 +42,14 @@ export function TransactionInfo({
           size="48px"
           borderRadius="16px"
           loading={iconLoading}
-          icon={cloneElement(icon, {
+          icon={!loading ? cloneElement(icon, {
             width: '24',
             height: '24'
-          })}
+          }) : undefined}
         />
       }
       title={title}
+      loading={loading}
       label={label}
       content={content}
       amount={amount}
