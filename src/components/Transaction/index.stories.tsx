@@ -12,6 +12,12 @@ const Template: ComponentStory<typeof TransactionInfo> = (args: TransactionInfoP
   </>
 )
 
+const Skeleton: ComponentStory<typeof TransactionInfo.Skeleton> = () => (
+  <>
+    <TransactionInfo.Skeleton />
+  </>
+)
+
 export const Sent = Template.bind({})
 Sent.args = {
   icon: <Icon.Send color="var(--sk-color-y50)" />
@@ -27,6 +33,8 @@ Expired.args = {
   content: 'This is the description',
   amount: <span style={{ color: 'var(--sk-color-n50)' }}>+123</span>
 }
+
+export const Loading = Skeleton
 
 export const OnChain = Template.bind({})
 OnChain.args = {

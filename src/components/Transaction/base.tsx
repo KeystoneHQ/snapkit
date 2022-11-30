@@ -1,6 +1,7 @@
 import { ReactElement, ReactNode } from 'react'
 import { tw } from 'twind'
-import { formatAddressDisplay, formatDate } from '../utils'
+import { css } from 'twind/css'
+import { skeletonCommon } from '../styles'
 import styles from './index.module.scss'
 
 export interface BaseTransactionInfoProps {
@@ -9,11 +10,25 @@ export interface BaseTransactionInfoProps {
   amount: ReactNode
   label?: string
   content?: string
+  loading?: boolean
   datetime?: string
   className?: string
   bodyClassName?: string
   onClick?: () => void
 }
+
+
+const skeletonTitle = tw(skeletonCommon, tw`
+  mt-[5px] w-1/4 h-[12px]
+`, css`
+  animation-duration: 7s;
+`)
+
+const skeletonDesc = tw(skeletonCommon, tw`
+  mt-[10px] w-1/4 h-[12px]
+`, css`
+  animation-duration: 1.6s;
+`)
 
 export function BaseTransactionInfo({
   icon,
@@ -22,6 +37,7 @@ export function BaseTransactionInfo({
   label = '',
   content,
   datetime,
+  loading = false,
   onClick,
   className,
   bodyClassName
@@ -35,15 +51,21 @@ export function BaseTransactionInfo({
         <div className={`left-icon ${styles.left}`}>{icon}</div>
         <div className={`right-info ${styles.right}`}>
           <div className={tw`flex justify-between`}>
-            <span className="sk-t-body">{title}</span>
-            <span className={`sk-t-h3 sk-c-n80`}>{amount}</span>
+            {!loading ? <>
+              <span className="sk-t-body">{title}</span>
+              <span className={`sk-t-h3 sk-c-n80`}>{amount}</span>
+              </>
+            : <div className={skeletonTitle}></div>}
           </div>
           <div className={`sk-flex sk-justify-between ${styles.rightBottom}`}>
-            <div>
-              <span className="sk-t-caption sk-c-n50">{label}</span>
-              <span className="sk-t-caption sk-c-n60">{content}</span>
-            </div>
-            <span className="sk-t-caption sk-c-n50">{datetime}</span>
+            {!loading ? <>
+              <div>
+                <span className="sk-t-caption sk-c-n50">{label}</span>
+                <span className="sk-t-caption sk-c-n60">{content}</span>
+              </div>
+              <span className="sk-t-caption sk-c-n50">{datetime}</span>
+              </>
+             : <div className={skeletonDesc}></div>}
           </div>
         </div>
       </div>
