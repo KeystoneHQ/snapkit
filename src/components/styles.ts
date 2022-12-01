@@ -1,18 +1,34 @@
 import { css, keyframes } from '@emotion/css';
 
 const placeholderSkeleton = keyframes`
-  0% {
-    background-position: -500px 0;
+  0%{
+    transform:translateX(-37.5%)
   }
-  100% {
-    background-position: 500px 0;
+  100%{
+    transform:translateX(37.5%);
   }
 `
 
 export const skeletonCommon = css`
-  background: linear-gradient(145deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  position: relative;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+  background: transparent;
   border-radius: 2px;
-  animation: ${placeholderSkeleton} 1s forwards linear infinite;
+  &::after {
+    position: absolute;
+    top: 0;
+    inset-inline-end: -150%;
+    bottom: 0;
+    inset-inline-start: -150%;
+    background: linear-gradient(90deg,rgba(0,0,0,0.04) 25%,rgba(0,0,0,0.08) 37%,rgba(0,0,0,0.04) 63%);
+    animation-name: ${placeholderSkeleton};
+    animation-duration: 1.4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    content: "";
+  }
 `
 
 export const flexCenter = css`
