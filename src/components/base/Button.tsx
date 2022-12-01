@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { css, tw } from 'twind/css'
+import { css } from '@emotion/css'
 import styles from './Button.module.scss'
 import { Loading } from './Loading'
 
@@ -57,13 +57,13 @@ export function Button({
       loadingIcon || <Loading></Loading>
     ) : (
       <div
-        className={tw(css`
+        className={css`
           display: flex;
           padding: 0 8px;
           .icon-prefix + .button-content {
             margin-left: 8px;
           }
-        `)}
+        `}
       >
         {icon && <div className="icon-prefix">{icon}</div>}
         {children && <div className={`button-content`}>{children}</div>}

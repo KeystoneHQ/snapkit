@@ -1,7 +1,7 @@
 import { Modal as BaseModal, ModalProps } from 'semantic-ui-react'
-import { tw } from 'twind'
 import { Icon } from '../icon'
 import styles from './Modal.module.scss'
+import { flexCenter } from '../styles'
 
 export function Modal({
   children,
@@ -12,7 +12,7 @@ export function Modal({
 }: ModalProps) {
   const _closeIcon = (
     <div
-      className={`sk-icon ${tw`flex justify-center items-center`} ${
+      className={`sk-icon ${flexCenter} ${
         styles.close
       } sk-bg-hover-ntd04 sk-a-transition`}
     >

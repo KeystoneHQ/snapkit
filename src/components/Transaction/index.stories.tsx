@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { faker } from '@faker-js/faker'
-import { css, tw } from 'twind/css'
 import { List } from 'semantic-ui-react'
+import { css } from '@emotion/css'
 import BigNumber from 'bignumber.js'
 import { TransactionInfo, TransactionInfoProps } from '.'
 import { Icon } from '../icon'
@@ -69,19 +69,19 @@ export const InList: ComponentStory<typeof TransactionInfo> = (
         })
         .map((args, idx) => {
           return (
-            <List.Item className={tw`!p-0`} key={idx}>
+            <List.Item className={css`padding: 0 !important`} key={idx}>
               {
                 <TransactionInfo
                   {...args}
-                  className={tw(css`
+                  className={css`
                     cursor: pointer;
                     transition: var(--sk-transition);
                     &:hover {
                       background-color: var(--sk-color-ntd04);
                       transition: var(--sk-transition);
                     }
-                  `)}
-                  bodyClassName={tw(css`
+                  `}
+                  bodyClassName={css`
                     position: relative;
                     ${idx === 0
                       ? 0
@@ -95,7 +95,7 @@ export const InList: ComponentStory<typeof TransactionInfo> = (
                             background: var(--sk-color-ntd04);
                           }
                         `}
-                  `)}
+                  `}
                 />
               }
             </List.Item>
