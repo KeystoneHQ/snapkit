@@ -1,6 +1,6 @@
 import { Button, ButtonProps } from './Button'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { tw } from 'twind'
+import { css } from '@emotion/css'
 import { Icon } from '../icon'
 
 export default {
@@ -27,7 +27,11 @@ Loading.args = { loading: true }
 export const Size = () => {
   const sizes = ['small', 'medium', 'large', null] as const
   return (
-    <div className={tw`flex flex-col gap-2`}>
+    <div className={css`
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    `}>
       {sizes.map(size => (
         <div key={size}>
           <Button primary size={size}>
@@ -42,9 +46,10 @@ export const Size = () => {
 export const CustomLoadingIconButton = Loading.bind({})
 CustomLoadingIconButton.args = { loading: true, loadingIcon: <Icon.Brave /> }
 
+const flexGap2Style = css`display: flex; gap: 2px;`
 export const IconButton = () => {
   return (
-    <div className={tw`flex gap-2`}>
+    <div className={flexGap2Style}>
       <div>
         <Button primary icon={<Icon.Scan />}>
           <span>Search</span>
@@ -57,13 +62,14 @@ export const IconButton = () => {
   )
 }
 
+const colorCyanMarginLeft2 = css`color: cyan; margin-left: 2px;`
 export const SuffixButton = () => {
   return (
-    <div className={tw`flex gap-2`}>
+    <div className={flexGap2Style}>
       <div>
         <Button
           primary
-          suffix={<span className={tw`text-blue-200 ml-2`}>Suffix Text</span>}
+          suffix={<span className={colorCyanMarginLeft2}>Suffix Text</span>}
         >
           <span>Search</span>
         </Button>
@@ -72,7 +78,7 @@ export const SuffixButton = () => {
         <Button
           primary
           suffix={
-            <span className={tw`text-blue-200 ml-2`}>
+            <span className={colorCyanMarginLeft2}>
               Suffix Icon <Icon.Check />
             </span>
           }

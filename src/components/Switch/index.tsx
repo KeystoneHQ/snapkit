@@ -1,6 +1,5 @@
-import { createRef, useState } from 'react'
-import { tw } from 'twind'
-import { css } from 'twind/css'
+import { useState } from 'react'
+import { css } from '@emotion/css'
 
 export interface SwitchProps {
   defaultValue?: boolean
@@ -23,36 +22,35 @@ const style = (config: {
   width: number
   open: boolean
   circleWidth: number
-}) =>
-  tw(css`
-    :hover {
-      cursor: pointer;
+}) => css`
+  :hover {
+    cursor: pointer;
+  }
+  & > label {
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      width: ${config.width}px;
+      height: 20px;
+      border-radius: 20px;
+      background-color: ${config.backgroundColor};
+      transition: var(--sk-transition);
     }
-    & > label {
-      position: relative;
-      &::before {
-        content: '';
-        display: block;
-        width: ${config.width}px;
-        height: 20px;
-        border-radius: 20px;
-        background-color: ${config.backgroundColor};
-        transition: var(--sk-transition);
-      }
-      &::after {
-        content: '';
-        position: absolute;
-        left: ${config.open ? 18 : 5}px;
-        top: 5px;
-        display: block;
-        width: ${config.circleWidth}px;
-        height: ${config.circleWidth}px;
-        border-radius: 50%;
-        background-color: white;
-        transition: var(--sk-transition);
-      }
+    &::after {
+      content: '';
+      position: absolute;
+      left: ${config.open ? 18 : 5}px;
+      top: 5px;
+      display: block;
+      width: ${config.circleWidth}px;
+      height: ${config.circleWidth}px;
+      border-radius: 50%;
+      background-color: white;
+      transition: var(--sk-transition);
     }
-  `)
+  }
+`
 
 export function Switch({
   defaultValue = false,
@@ -79,7 +77,7 @@ export function Switch({
 
   return (
     <div className={'switch ' + SetStyle + ` ${className}`} onClick={onChangeSwitch}>
-      <input type="checkbox" checked={open} className={tw`hidden`}></input>
+      <input type="checkbox" checked={open} className={css`display: none;`}></input>
       <label></label>
     </div>
   )

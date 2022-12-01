@@ -22,17 +22,7 @@
       "vite/client"
     ],
     "jsx": "react-jsx",
-    "plugins": [
-      {
-        "name": "@twind/typescript-plugin",
-        "tags": [
-          "tw"
-        ],
-        "attributes": [
-          "tw"
-        ]
-      }
-    ]
+    "jsxImportSource": "@emotion/react"
   },
   "include": [
     "src"
