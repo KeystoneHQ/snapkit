@@ -57,7 +57,7 @@ function TransactionInfo({
   )
 }
 
-function TransactionInfoSkeleton() {
+function TransactionInfoSkeleton(args: Record<string, any>) {
   return (
     <BaseTransactionInfo
       icon={
@@ -70,6 +70,7 @@ function TransactionInfoSkeleton() {
       title=''
       loading
       amount={0}
+      {...args}
     />
   )
 }
