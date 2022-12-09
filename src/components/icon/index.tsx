@@ -34,6 +34,9 @@ import { OnChain } from './OnChain'
 import { BackCard } from './BackCard'
 import { WalletEx } from './WalletEx'
 import { TopUp } from './TopUp'
+import { FirefoxBrowser } from './FirefoxBrowser'
+import { Opera } from './Opera'
+import { CheckS } from './CheckS'
 
 export function Icon() {
   return <></>
@@ -93,3 +96,6 @@ Icon.BackCard = format(BackCard)
 Icon.OnChain = format(OnChain)
 Icon.WalletEx = format(WalletEx)
 Icon.TopUp = format(TopUp)
+Icon.FirefoxBrowser = format(FirefoxBrowser)
+Icon.Opera = format(Opera)
+Icon.CheckS = format(CheckS)

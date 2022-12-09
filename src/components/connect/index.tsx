@@ -55,7 +55,7 @@ export function Connect ({ name, logo, open, loading, connected, onConnect, onGe
       if (!isBrowserOk) {
         setSize('tiny')
         setModalClass(`${modalDefaultClass} ${styles.browser}`)
-        setStep(<Browser></Browser>)
+        setStep(<Browser list={['chrome', 'firefox', 'brave']}></Browser>)
       } else if (connected) {
         setModalClass(modalDefaultClass)
         const props = {
