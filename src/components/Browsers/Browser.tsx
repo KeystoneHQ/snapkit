@@ -1,35 +1,61 @@
-import React from "react";
 import { Modal } from "semantic-ui-react";
 import "./Browser.scss";
 import { Icon } from '../icon';
+import { ReactNode } from "react";
 
-interface BrowsersProps {
+export interface BrowserInfo {
+  icon: ReactNode
+  name: string
+  link: string
+}
+
+export const BrowsersList: BrowserInfo[] = [
+  {
+    icon: <Icon.FirefoxBrowser />,
+    name: 'firefox',
+    link: 'https://www.mozilla.org/en-US/firefox/browsers/'
+  },
+  {
+    icon: <Icon.Chrome />,
+    name: 'chrome',
+    link: 'https://www.google.com/chrome/'
+  },
+  {
+    icon: <Icon.Brave />,
+    name: 'brave',
+    link: 'https://brave.com/'
+  },
+  {
+    icon: <Icon.Edge />,
+    name: 'edge',
+    link: 'https://www.microsoft.com/en-us/edge'
+  },
+  {
+    icon: <Icon.Opera />,
+    name: 'opera',
+    link: 'https://www.opera.com/'
+  },
+]
+
+export interface BrowsersProps {
   open: boolean
+  list: ('firefox' | 'chrome' | 'brave' | 'edge' | 'opera'  | string & {})[]
   close?: () => void
 }
 
-export const Browsers = ({open=false, close}: BrowsersProps) => {
+export const Browsers = ({open=false, list, close}: BrowsersProps) => {
+  const renderList: BrowserInfo[] = list.map(name => BrowsersList.find(it => it.name === name)).filter(it => it && it?.name) as BrowserInfo[]
 
   return (
     <Modal open={open} className="browsers" style={{width: 552, height: 333, borderRadius: '20px', position: "relative"}}>
       <div className="browsers-close-icon" onClick={close}><Icon.Close /></div>
       <div className="browsers-container">
-        <a href='https://www.google.com/chrome/'>
-          <Icon.Chrome />
-          <div>Chrome</div>
-        </a>
-        <a href='https://www.mozilla.org/'>
-          <Icon.Firefox />
-          <div>Firefox</div>
-        </a>
-        <a href='https://brave.com/'>
-          <Icon.Brave />
-          <div>Brave</div>
-        </a>
-        <a href='https://www.microsoft.com/en-us/edge'>
-          <Icon.Edge />
-          <div>Edge</div>
-        </a>
+        {renderList.map(it => {
+         return <a href={it.link}>
+            {it.icon}
+            <div>{it.name}</div>
+          </a>
+        })}
       </div>
       <div className="browsers-warning">This Browser is not Supported</div>
       <div className="browsers-suggestion">Please use the browsers above we currently supported.</div>
