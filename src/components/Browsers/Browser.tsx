@@ -41,13 +41,15 @@ export interface BrowsersProps {
   open: boolean
   list: ('firefox' | 'chrome' | 'brave' | 'edge' | 'opera'  | string & {})[]
   close?: () => void
+  className?: string
+  [k: string]: any
 }
 
-export const Browsers = ({open=false, list, close}: BrowsersProps) => {
+export const Browsers = ({open=false, list, close, ...args }: BrowsersProps) => {
   const renderList: BrowserInfo[] = list.map(name => BrowsersList.find(it => it.name === name)).filter(it => it && it?.name) as BrowserInfo[]
 
   return (
-    <Modal open={open} className="browsers" style={{width: 552, height: 333, borderRadius: '20px', position: "relative"}}>
+    <Modal open={open} className={`browsers ${args.className || ''}`} style={{width: 552, height: 333, borderRadius: '20px', position: "relative"}}>
       <div className="browsers-close-icon" onClick={close}><Icon.Close /></div>
       <div className="browsers-container">
         {renderList.map(it => {
