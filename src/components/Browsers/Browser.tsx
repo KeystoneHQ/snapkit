@@ -1,7 +1,7 @@
 import { Modal } from "semantic-ui-react";
 import "./Browser.scss";
 import { Icon } from '../icon';
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 export interface BrowserInfo {
   icon: ReactNode
@@ -42,14 +42,15 @@ export interface BrowsersProps {
   list: ('firefox' | 'chrome' | 'brave' | 'edge' | 'opera'  | string & {})[]
   close?: () => void
   className?: string
+  style?: CSSProperties
   [k: string]: any
 }
 
-export const Browsers = ({open=false, list, close, ...args }: BrowsersProps) => {
+export const Browsers = ({open=false, list, close, style, className, ...args }: BrowsersProps) => {
   const renderList: BrowserInfo[] = list.map(name => BrowsersList.find(it => it.name === name)).filter(it => it && it?.name) as BrowserInfo[]
 
   return (
-    <Modal open={open} className={`browsers ${args.className || ''}`} style={{width: 552, height: 333, borderRadius: '20px', position: "relative"}}>
+    <Modal open={open} className={`browsers ${className || ''}`} style={{width: 552, height: 333, borderRadius: '20px', position: "relative", ...style }} {...args}>
       <div className="browsers-close-icon" onClick={close}><Icon.Close /></div>
       <div className="browsers-container">
         {renderList.map(it => {
