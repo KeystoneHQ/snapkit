@@ -13,15 +13,17 @@ export default {
     }
   },
   args: {
-    list: ['edge', 'brave', 'opera', 'firefox']
+    list: ['edge', 'brave', 'opera', 'firefox'],
+    className: 'asdf'
   }
 } as ComponentMeta<typeof Browsers>
 
 const Template: ComponentStory<typeof Browsers> = (args) => {
-  const [isOpen, setIsOpen] = useState<boolean>(args.open);
+  const { open, list, className } = args
+  const [isOpen, setIsOpen] = useState<boolean>(open);
 
   return(
-    <Browsers open={isOpen} list={args.list} close={() => setIsOpen(false)} />
+    <Browsers open={isOpen} list={list} className={className} close={() => setIsOpen(false)} />
   )
 };
 

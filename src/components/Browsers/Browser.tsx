@@ -1,7 +1,7 @@
-import { Modal } from "semantic-ui-react";
+import { Modal, ModalProps } from "semantic-ui-react";
 import "./Browser.scss";
 import { Icon } from '../icon';
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 export interface BrowserInfo {
   icon: ReactNode
@@ -37,17 +37,19 @@ export const BrowsersList: BrowserInfo[] = [
   },
 ]
 
-export interface BrowsersProps {
+export interface BrowsersProps extends ModalProps {
   open: boolean
   list: ('firefox' | 'chrome' | 'brave' | 'edge' | 'opera'  | string & {})[]
   close?: () => void
+  className?: string
+  style?: CSSProperties
 }
 
-export const Browsers = ({open=false, list, close}: BrowsersProps) => {
+export const Browsers = ({open=false, list, close, style, className, ...args }: BrowsersProps) => {
   const renderList: BrowserInfo[] = list.map(name => BrowsersList.find(it => it.name === name)).filter(it => it && it?.name) as BrowserInfo[]
 
   return (
-    <Modal open={open} className="browsers" style={{width: 552, height: 333, borderRadius: '20px', position: "relative"}}>
+    <Modal open={open} className={`browsers ${className || ''}`} style={{width: 552, height: 333, borderRadius: '20px', position: "relative", ...style }} {...args}>
       <div className="browsers-close-icon" onClick={close}><Icon.Close /></div>
       <div className="browsers-container">
         {renderList.map(it => {
@@ -62,3 +64,4 @@ export const Browsers = ({open=false, list, close}: BrowsersProps) => {
     </Modal>
   )
 }
+
