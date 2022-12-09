@@ -1,4 +1,4 @@
-import { Modal } from "semantic-ui-react";
+import { Modal, ModalProps } from "semantic-ui-react";
 import "./Browser.scss";
 import { Icon } from '../icon';
 import { CSSProperties, ReactNode } from "react";
@@ -37,13 +37,12 @@ export const BrowsersList: BrowserInfo[] = [
   },
 ]
 
-export interface BrowsersProps {
+export interface BrowsersProps extends ModalProps {
   open: boolean
   list: ('firefox' | 'chrome' | 'brave' | 'edge' | 'opera'  | string & {})[]
   close?: () => void
   className?: string
   style?: CSSProperties
-  [k: string]: any
 }
 
 export const Browsers = ({open=false, list, close, style, className, ...args }: BrowsersProps) => {
@@ -65,3 +64,4 @@ export const Browsers = ({open=false, list, close, style, className, ...args }: 
     </Modal>
   )
 }
+
